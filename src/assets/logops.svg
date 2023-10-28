@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="57.992332mm"
+   height="55.222054mm"
+   viewBox="0 0 57.992332 55.222054"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="logoportfoliowebsite.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2"
+     inkscape:cx="144.5"
+     inkscape:cy="581"
+     inkscape:window-width="3436"
+     inkscape:window-height="1411"
+     inkscape:window-x="1080"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid222" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4886">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4882" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop4884" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4864">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4860" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop4862" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4794">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4790" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4792" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4532">
+      <rect
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.39185;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect4534"
+         width="19.318211"
+         height="26.2934"
+         x="115.20369"
+         y="154.1469" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4778">
+      <rect
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.09669;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect4780"
+         width="19.444504"
+         height="29.563839"
+         x="95.787498"
+         y="128.27873" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4794"
+       id="linearGradient4796"
+       x1="115.20369"
+       y1="178.03174"
+       x2="115.232"
+       y2="133.93695"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4864"
+       id="linearGradient4858"
+       x1="96.684853"
+       y1="133.93695"
+       x2="115.232"
+       y2="133.93695"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4886"
+       id="linearGradient4880"
+       x1="133.72252"
+       y1="178.03174"
+       x2="115.20369"
+       y2="178.03174"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4794"
+       id="linearGradient4888"
+       gradientUnits="userSpaceOnUse"
+       x1="115.20369"
+       y1="178.03174"
+       x2="115.232"
+       y2="133.93695" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4794"
+       id="linearGradient4890"
+       gradientUnits="userSpaceOnUse"
+       x1="115.20369"
+       y1="178.03174"
+       x2="115.232"
+       y2="133.93695" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-77.975,-117.75847)">
+    <g
+       id="g4788"
+       transform="translate(2.2448128,-5.0512228)"
+       inkscape:export-filename="logops.png"
+       inkscape:export-xdpi="218.99446"
+       inkscape:export-ydpi="218.99446">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:3.3;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="path278"
+         cx="94.249023"
+         cy="141.32854"
+         r="16.868835" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:3.3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         d="m 77.380186,141.32854 v 32.61162"
+         id="path1065" />
+    </g>
+    <g
+       id="g4784"
+       transform="translate(2.2448128,-5.0512228)"
+       style="stroke:url(#linearGradient4796)">
+      <ellipse
+         style="fill:url(#linearGradient4858);fill-opacity:1;stroke:url(#linearGradient4888);stroke-width:3.3;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="path278-3"
+         cx="115.20369"
+         cy="145.78564"
+         rx="16.868835"
+         ry="10.198701"
+         clip-path="url(#clipPath4778)" />
+      <ellipse
+         style="fill:url(#linearGradient4880);fill-opacity:1;stroke:url(#linearGradient4890);stroke-width:3.3;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="path278-6"
+         cx="115.20369"
+         cy="166.18304"
+         rx="16.868835"
+         ry="10.198701"
+         clip-path="url(#clipPath4532)" />
+    </g>
+  </g>
+</svg>
