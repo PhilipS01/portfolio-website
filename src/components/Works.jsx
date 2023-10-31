@@ -3,10 +3,12 @@ import { styles } from "../styles";
 
 const Works = () => {
   return (
-    <div>
-      <h1 className={`${styles.sectionHeadTextBlack} text-offblack`}>Work</h1>
-      <p>Hallo</p>
-    </div>
+    <section className="h-screen">
+      <div>
+        <h1 className={`${styles.sectionHeadTextBlack} text-offblack`}>Work</h1>
+        <p>Hier stehen spaeter meine Projekte.</p>
+      </div>
+    </section>
   );
 };
 

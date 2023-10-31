@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { styles } from "../styles";
 import { MainCanvas } from "./canvas";
 import { Reveal, DoubleSlideReveal } from "./util/Reveal";
@@ -9,61 +9,56 @@ import { changeText, changeSubtext } from "../slices/mainHeadingSlice";
 import delay from "./util/delay";
 import ProjectProperties from "./ProjectProperties";
 import { projects } from "../constants";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
-  const dispatch = useDispatch();
-  const matrs = useSelector((state) => state.matrs);
   const heading = useSelector((state) => state.heading);
-  const defaultHeading = useSelector((state) => state.defaultHeading);
 
   const mainHeadingText = heading.text;
   const mainHeadingSubText = heading.subtext;
 
-  const subHeading = document.getElementById("subHeading");
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["end end", "end start"],
+  });
 
-  const [projectIndex, setprojectIndex] = useState(0);
+  const fontcolor = useTransform(scrollYProgress, [0, 1], [0, 255]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
-  async function animateChangeHeading(text, subtext) {
-    await delay(250);
-    dispatch(changeText(text));
-    subHeading.style.opacity = "0";
-    dispatch(changeSubtext(subtext));
-    await delay(300);
-    subHeading.style.opacity = "1";
+  function mainHeadingColor(colorValue) {
+    return `rgba(${colorValue}, ${colorValue}, ${colorValue})`;
   }
 
-  // Update the text of the main heading depending on which project is opened/displayed
-  useEffect(() => {
-    if (matrs.vis) {
-      animateChangeHeading(matrs.text, matrs.subtext);
-    } else {
-      // if no project is visible, display default text
-      if (defaultHeading.vis) {
-        animateChangeHeading(defaultHeading.text, defaultHeading.subtext);
-      }
-    }
-  }, [matrs.vis]);
-
   return (
-    <section className="relative w-full h-screen mx-auto">
+    <motion.section
+      className="relative w-full h-screen mx-auto"
+      style={{
+        opacity,
+      }}
+      ref={targetRef}
+    >
       <div
-        className="flex flex-col relative top-[35vh] text-center"
+        className="flex flex-col relative top-[35vh] text-center sticky"
         id="headings"
       >
         <div id="mainHeading">
           <ChangeHero>
             <Reveal>
-              <h1
+              <motion.h1
                 className={`${styles.heroHeadText} w-fit mx-auto`}
                 id="mainHeadingH1"
+                animate={{
+                  color: `rgba(${fontcolor.get()}, ${fontcolor.get()}, ${fontcolor.get()})`,
+                }}
               >
                 {mainHeadingText}
-              </h1>
+              </motion.h1>
             </Reveal>
           </ChangeHero>
         </div>
         <p
-          className={`${styles.heroSubText} mt-4  mx-auto w-fit`}
+          className={`${styles.heroSubText} mt-4  mx-auto w-fit invert-[50%]`}
           id="subHeading"
         >
           <ChangeHeroSub>{mainHeadingSubText}</ChangeHeroSub>
@@ -81,8 +76,7 @@ const Hero = () => {
           </DoubleSlideReveal>
         </div>
       </div>
-      <ProjectProperties {...projects[projectIndex]} />
-    </section>
+    </motion.section>
   );
 };
 
