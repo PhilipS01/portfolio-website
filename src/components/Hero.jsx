@@ -45,9 +45,9 @@ const Hero = () => {
   }, [matrs.vis]);
 
   return (
-    <section className="relative w-full h-[screen] mx-auto">
+    <section className="relative w-full h-screen mx-auto">
       <div
-        className="flex flex-col relative top-[200px] text-center"
+        className="flex flex-col relative top-[35vh] text-center"
         id="headings"
       >
         <div id="mainHeading">
@@ -63,25 +63,24 @@ const Hero = () => {
           </ChangeHero>
         </div>
         <p
-          className={`${styles.heroSubText} mt-2  mx-auto w-fit`}
+          className={`${styles.heroSubText} mt-4  mx-auto w-fit`}
           id="subHeading"
         >
           <ChangeHeroSub>{mainHeadingSubText}</ChangeHeroSub>
         </p>
 
-        <div className="text-accent_tint mt-10 z-10">
+        <div className="text-accent_tint mt-7 z-10">
           <DoubleSlideReveal>
             <a
               href="#work"
               id="direct_work_link"
-              className="hover:font-bold transition-all"
+              className="font-medium hover:font-bold transition-all"
             >
-              Direkt zu den Projekten ⇀
+              Direkt zu den Projekten ➜
             </a>
           </DoubleSlideReveal>
         </div>
       </div>
-      <MainCanvas />
       <ProjectProperties {...projects[projectIndex]} />
     </section>
   );

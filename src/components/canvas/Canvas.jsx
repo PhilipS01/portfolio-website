@@ -54,25 +54,17 @@ const MainCanvas = () => {
         gl={{ preserveDrawingBuffer: true }}
         id="canvasmain"
       >
-        <ScrollControls pages={2} damping={0.8}>
-          <hemisphereLight
-            intensity={0.15}
-            position={[0, 10, 10]}
-            groundColor="white"
-          />
-          <spotLight
-            intensity={1}
-            position={[0, 10, 20]}
-            rotation={[0, 0, 0]}
-          />
-          <Suspense fallback={<CanvasLoader />}>
-            <Drawer_Model />
-            <Matrs_Model />
-            <Glove_Model />
-          </Suspense>
+        <hemisphereLight
+          intensity={0.15}
+          position={[0, 10, 10]}
+          groundColor="white"
+        />
+        <spotLight intensity={1} position={[0, 10, 20]} rotation={[0, 0, 0]} />
+        <Suspense fallback={<CanvasLoader />}>
+          <Matrs_Model />
+        </Suspense>
 
-          <Preload all />
-        </ScrollControls>
+        <Preload all />
       </Canvas>
     </div>
   );
