@@ -23,26 +23,27 @@ const Hero = () => {
     offset: ["start end", "end start"],
   });
 
-  const color = useTransform(
-    scrollYProgress,
-    [0.48, 0.68],
-    ["#232B23", "#fff"]
-  );
-  const opacity = useTransform(scrollYProgress, [0.75, 0.83], [1, 0]);
+  const color = useTransform(scrollYProgress, [0.48, 0.6], ["#232B23", "#fff"]); // heading color
+  const opacity = useTransform(scrollYProgress, [0.75, 0.83], [1, 0]); // landing div opacity
 
   const color2 = useTransform(
     scrollYProgress,
-    [0.5, 0.6],
+    [0.5, 0.55],
     ["#232B23", "#d79922"]
-  );
+  ); // projects link color
+
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0.48, 0.52],
+    ["#e9dab1", "#282828"]
+  ); // background color
 
   return (
     <section>
       <motion.section
         className="relative w-full h-[200vh] mx-auto bg-retro_secondary"
         style={{
-          background:
-            "linear-gradient(to bottom, #e9dab1 0%, #e9dab1 40%, #282828 60%, #282828 100%)",
+          backgroundColor,
         }}
         ref={targetRef}
       >
