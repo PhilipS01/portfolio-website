@@ -20,63 +20,73 @@ const Hero = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["end end", "end start"],
+    offset: ["start end", "end start"],
   });
 
-  const fontcolor = useTransform(scrollYProgress, [0, 1], [0, 255]);
-  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const color = useTransform(
+    scrollYProgress,
+    [0.48, 0.68],
+    ["#232B23", "#fff"]
+  );
+  const opacity = useTransform(scrollYProgress, [0.75, 0.83], [1, 0]);
 
-  function mainHeadingColor(colorValue) {
-    return `rgba(${colorValue}, ${colorValue}, ${colorValue})`;
-  }
+  const color2 = useTransform(
+    scrollYProgress,
+    [0.5, 0.6],
+    ["#232B23", "#d79922"]
+  );
 
   return (
-    <motion.section
-      className="relative w-full h-screen mx-auto"
-      style={{
-        opacity,
-      }}
-      ref={targetRef}
-    >
-      <div
-        className="flex flex-col relative top-[35vh] text-center sticky"
-        id="headings"
+    <section>
+      <motion.section
+        className="relative w-full h-[200vh] mx-auto bg-retro_secondary"
+        style={{
+          background:
+            "linear-gradient(to bottom, #e9dab1 0%, #e9dab1 40%, #282828 60%, #282828 100%)",
+        }}
+        ref={targetRef}
       >
-        <div id="mainHeading">
-          <ChangeHero>
-            <Reveal>
-              <motion.h1
-                className={`${styles.heroHeadText} w-fit mx-auto`}
-                id="mainHeadingH1"
-                animate={{
-                  color: `rgba(${fontcolor.get()}, ${fontcolor.get()}, ${fontcolor.get()})`,
-                }}
-              >
-                {mainHeadingText}
-              </motion.h1>
-            </Reveal>
-          </ChangeHero>
-        </div>
-        <p
-          className={`${styles.heroSubText} mt-4  mx-auto w-fit invert-[50%]`}
-          id="subHeading"
+        <motion.div
+          className="flex flex-col top-[35vh] text-center sticky"
+          id="headings"
+          style={{ opacity }}
         >
-          <ChangeHeroSub>{mainHeadingSubText}</ChangeHeroSub>
-        </p>
+          <div id="mainHeading">
+            <ChangeHero>
+              <Reveal>
+                <motion.h1
+                  className={`${styles.heroHeadText} w-fit mx-auto`}
+                  id="mainHeadingH1"
+                  style={{
+                    color,
+                  }}
+                >
+                  {mainHeadingText}
+                </motion.h1>
+              </Reveal>
+            </ChangeHero>
+          </div>
+          <p
+            className={`${styles.heroSubText} mt-4  mx-auto w-fit invert-[50%]`}
+            id="subHeading"
+          >
+            <ChangeHeroSub>{mainHeadingSubText}</ChangeHeroSub>
+          </p>
 
-        <div className="text-accent_tint mt-7 z-10">
-          <DoubleSlideReveal>
-            <a
-              href="#work"
-              id="direct_work_link"
-              className="font-medium hover:font-bold transition-all"
-            >
-              Direkt zu den Projekten ➜
-            </a>
-          </DoubleSlideReveal>
-        </div>
-      </div>
-    </motion.section>
+          <motion.div className="mt-7 z-10" style={{ color: color2 }}>
+            <DoubleSlideReveal>
+              <a
+                href="#work"
+                id="direct_work_link"
+                className="font-medium hover:font-bold hover:text-lg transition-all"
+              >
+                Direkt zu den Projekten ➜
+              </a>
+            </DoubleSlideReveal>
+          </motion.div>
+        </motion.div>
+      </motion.section>
+    </section>
   );
 };
 

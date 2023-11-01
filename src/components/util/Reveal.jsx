@@ -59,13 +59,13 @@ export const DoubleSlideReveal = ({ children }) => {
         transition={{ duration: 0.25, delay: 0.25, ease: "easeIn" }}
         style={{
           position: "absolute",
-          top: 3,
-          bottom: 3,
+          top: 2,
+          bottom: 2,
           left: 0,
           right: 0,
           zIndex: 22,
         }}
-        className="bg-offwhite"
+        className="bg-retro_primary"
       />
       <motion.div
         variants={{
@@ -77,13 +77,13 @@ export const DoubleSlideReveal = ({ children }) => {
         transition={{ duration: 0.25, delay: 0.5, ease: "easeOut" }}
         style={{
           position: "absolute",
-          top: 3,
-          bottom: 3,
+          top: 2,
+          bottom: 2,
           left: 0,
           right: 0,
           zIndex: 20,
         }}
-        className="bg-quaternary"
+        className="bg-retro_secondary"
       />
     </div>
   );
