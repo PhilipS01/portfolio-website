@@ -5,17 +5,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#ffffff",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        quaternary: "#dfd9ff",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "black-300": "#161617",
-        offwhite: "#f3f3f3",
-        offblack: "#1d1d1f",
-        accent: "#6e1ed0",
-        accent_tint: "#9961de",
         retro_primary: "#e9dab1",
         retro_secondary: "#282828",
         retro_accent_green: "#689d69",

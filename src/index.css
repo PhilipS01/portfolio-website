@@ -208,3 +208,59 @@
   background-image: radial-gradient(circle at 83% 88%, 
   white, #a370e1);
 }
+
+a#scroll-btn {
+  position: absolute;
+  bottom: 100vh;
+  margin: auto;
+  margin-bottom: 4vh;
+  left: 0;
+  right: 0;
+
+  height: 4.8em;
+  width: 2.4em;
+  border: 0.2em solid #282828;
+  border-radius: 2em;
+  cursor: pointer;
+}
+a#scroll-btn:before{
+  position: absolute;
+  content: "";
+  margin: auto;
+  top: 0.6em;
+  left: 0;
+  right: 0;
+  height: 0.6em;
+  width: 0.6em;
+  background-color: #282828;
+  border-radius: 50%;
+  animation: move-down 2s infinite;
+}
+@keyframes move-down {
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(2.4em);
+    opacity: 0;
+  }
+}
+@media (pointer:coarse) {
+  a#scroll-btn:before{
+    top: auto;
+    bottom: 0.6em;
+  }
+  @keyframes move-down {
+    80% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-2.4em);
+      opacity: 0;
+    }
+  }
+}
+
+#direct_work_link{
+  cursor: pointer;
+}

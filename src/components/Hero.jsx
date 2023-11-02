@@ -10,6 +10,14 @@ import delay from "./util/delay";
 import ProjectProperties from "./ProjectProperties";
 import { projects } from "../constants";
 import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from "react-scroll";
 
 const Hero = () => {
   const heading = useSelector((state) => state.heading);
@@ -37,6 +45,12 @@ const Hero = () => {
     [0.48, 0.52],
     ["#e9dab1", "#282828"]
   ); // background color
+
+  const scroll_alert_opacity = useTransform(
+    scrollYProgress,
+    [0.34, 0.37],
+    [1, 0]
+  ); // landing div opacity
 
   return (
     <section>
@@ -76,15 +90,31 @@ const Hero = () => {
 
           <motion.div className="mt-7 z-10" style={{ color: color2 }}>
             <DoubleSlideReveal>
-              <a
-                href="#work"
+              <Link
+                activeClass="active"
+                to="work"
+                smooth={true}
+                offset={-100}
+                duration={1000}
+                spy={true}
                 id="direct_work_link"
                 className="font-medium hover:font-bold hover:text-lg transition-all"
               >
                 Direkt zu den Projekten ➜
-              </a>
+              </Link>
             </DoubleSlideReveal>
           </motion.div>
+        </motion.div>
+        <motion.div style={{ opacity: scroll_alert_opacity }}>
+          <Link
+            activeClass="active"
+            to="work"
+            smooth={true}
+            offset={-100}
+            duration={2500}
+            spy={true}
+            id="scroll-btn"
+          />
         </motion.div>
       </motion.section>
     </section>
