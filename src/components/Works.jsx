@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styles } from "../styles";
 import { Element } from "react-scroll";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const fadeInVariants = {
+  initial: { opacity: 0, y: 100 },
+  animate: { opacity: 1, y: 0 },
+};
 
 const Works = () => {
   return (
@@ -9,20 +15,16 @@ const Works = () => {
       <Element name="work">
         <motion.div
           className="text-center"
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{
-            opacity: 1,
-            scale: 1,
-            transition: {
-              duration: 0.8,
-              delay: 0.5,
-              ease: [0, 0.71, 0.2, 1.01],
-            },
-          }}
-          viewport={{ once: true }}
+          variants={fadeInVariants}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ delay: 0.5, duration: 1 }}
         >
-          <h1 className={`${styles.sectionHeadText} text-offblack`}>Work</h1>
-          <p>Hier stehen spaeter meine Projekte.</p>
+          <h1 className={`${styles.sectionHeadText} text-offblack`}>
+            Projekte
+          </h1>
+          <p className="text-white">Eine Kollektion meines ganzen Stolzes.</p>
         </motion.div>
       </Element>
     </section>

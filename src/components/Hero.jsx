@@ -55,7 +55,7 @@ const Hero = () => {
   return (
     <section>
       <motion.section
-        className="relative w-full h-[200vh] mx-auto bg-retro_secondary"
+        className="relative w-full h-[200vh] mx-auto bg-retro_primary"
         style={{
           backgroundColor,
         }}
@@ -94,7 +94,7 @@ const Hero = () => {
                 activeClass="active"
                 to="work"
                 smooth={true}
-                offset={-100}
+                offset={-150}
                 duration={1000}
                 spy={true}
                 id="direct_work_link"
@@ -110,7 +110,7 @@ const Hero = () => {
             activeClass="active"
             to="work"
             smooth={true}
-            offset={-100}
+            offset={-150}
             duration={2500}
             spy={true}
             id="scroll-btn"
