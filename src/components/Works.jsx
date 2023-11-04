@@ -8,18 +8,17 @@ import { SectionWrapper } from "../hoc/";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { MainCanvas } from "./canvas";
 
+//tiltMaxAngleX={2}
+//tiltMaxAngleY={2}
+//glareEnable={true}
+//glareMaxOpacity={0.4}
+//glareColor="#458587"
+//glarePosition="bottom"
+//glareBorderRadius="20px"
+
 const ProjectCard = ({ index, title, icon }) => {
   return (
-    <Tilt
-      tiltMaxAngleX={2}
-      tiltMaxAngleY={2}
-      glareEnable={true}
-      glareMaxOpacity={0.4}
-      glareColor="#458587"
-      glarePosition="bottom"
-      glareBorderRadius="20px"
-      className="xs:w-[80%] w-full"
-    >
+    <div className="xs:w-[80%] w-full">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className="w-full bg-gradient-to-b from-retro_accent_green to-retro_accent_blue p-[2px] rounded-[20px] shadow-card"
@@ -28,10 +27,10 @@ const ProjectCard = ({ index, title, icon }) => {
           options={{ max: 45, scale: 1, speed: 450 }}
           className="bg-[#101010] rounded-[20px] py-6 px-12 flex items-center flex-col h-[500px]"
         >
-          <table className="table-fixed w-full">
+          <table className="table-fixed w-full h-full">
             <tbody>
               <tr className="align-top">
-                <td className="text-white">
+                <td className="text-white h-full">
                   <MainCanvas />
                 </td>
                 <td>
@@ -46,7 +45,7 @@ const ProjectCard = ({ index, title, icon }) => {
           </table>
         </div>
       </motion.div>
-    </Tilt>
+    </div>
   );
 };
 

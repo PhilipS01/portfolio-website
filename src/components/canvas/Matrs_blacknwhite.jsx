@@ -17,13 +17,7 @@ const Matrs_Model = ({ props }) => {
   //}, [distance.toggled]);
 
   return (
-    <group
-      ref={matrsModelgroup}
-      {...props}
-      dispose={null}
-      scale={0.004}
-      visible={true}
-    >
+    <group ref={matrsModelgroup} {...props} dispose={null} visible={true}>
       <mesh
         geometry={nodes.matrs_1.geometry}
         material={materials["Kunststoff_-_matt_(Weiß)"]}
