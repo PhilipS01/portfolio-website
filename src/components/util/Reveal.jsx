@@ -83,7 +83,7 @@ export const DoubleSlideReveal = ({ children }) => {
           right: 0,
           zIndex: 20,
         }}
-        className="bg-retro_secondary"
+        className="bg-retro_primary"
       />
     </div>
   );

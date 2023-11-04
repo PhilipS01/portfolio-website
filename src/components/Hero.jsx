@@ -10,14 +10,7 @@ import delay from "./util/delay";
 import ProjectProperties from "./ProjectProperties";
 import { projects } from "../constants";
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-} from "react-scroll";
+import { GlowCapture, Glow } from "@codaworks/react-glow";
 
 const Hero = () => {
   const heading = useSelector((state) => state.heading);
@@ -37,13 +30,13 @@ const Hero = () => {
   const color2 = useTransform(
     scrollYProgress,
     [0.5, 0.55],
-    ["#232B23", "#d79922"]
+    ["#232B23", "rgba(0,0,0,0.0)"]
   ); // projects link color
 
   const backgroundColor = useTransform(
     scrollYProgress,
     [0.48, 0.52],
-    ["#e9dab1", "#282828"]
+    ["#e9dab1", "#181818"]
   ); // background color
 
   const scroll_alert_opacity = useTransform(
@@ -70,7 +63,7 @@ const Hero = () => {
             <ChangeHero>
               <Reveal>
                 <motion.h1
-                  className={`${styles.heroHeadText} w-fit mx-auto`}
+                  className={`${styles.heroHeadText} w-fit mx-auto glow:text-glow/50`}
                   id="mainHeadingH1"
                   style={{
                     color,
@@ -87,34 +80,39 @@ const Hero = () => {
           >
             <ChangeHeroSub>{mainHeadingSubText}</ChangeHeroSub>
           </p>
-
           <motion.div className="mt-7 z-10" style={{ color: color2 }}>
             <DoubleSlideReveal>
-              <Link
-                activeClass="active"
-                to="work"
-                smooth={true}
-                offset={-150}
-                duration={1000}
-                spy={true}
+              <a
+                href="#projects"
                 id="direct_work_link"
-                className="font-medium hover:font-bold hover:text-lg transition-all"
+                className="font-medium hover:font-bold hover:text-2xl text-xl transition-all bg-clip-text bg-gradient-to-r from-[#61A457] to-[#348C8E]"
               >
                 Direkt zu den Projekten ➜
-              </Link>
+              </a>
             </DoubleSlideReveal>
           </motion.div>
         </motion.div>
-        <motion.div style={{ opacity: scroll_alert_opacity }}>
-          <Link
-            activeClass="active"
-            to="work"
-            smooth={true}
-            offset={-150}
-            duration={2500}
-            spy={true}
-            id="scroll-btn"
-          />
+
+        <motion.div
+          className="absolute bottom-[105vh] w-full flex justify-center items-center"
+          style={{ opacity: scroll_alert_opacity }}
+        >
+          <a href="#projects">
+            <div
+              className="w-[35px] h-[64px] rounded-3xl border-4 border-retro_secondary flex justify-center items-start p-2"
+              id="scroll-btn"
+            >
+              <motion.div
+                animate={{ y: [0, 24, 0] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="w-3 h-3 rounded-full bg-retro_secondary mb-1"
+              />
+            </div>
+          </a>
         </motion.div>
       </motion.section>
     </section>

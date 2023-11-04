@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-[rgb(255,255,255,0.3)] backdrop-blur-lg`}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-[rgb(255,255,255,0.15)] backdrop-blur-lg`}
     >
       <div
         className="w-full flex justify-between items-center max-w-[1500px] mx-auto"
@@ -39,10 +39,10 @@ const Navbar = () => {
                 active === link.title
                   ? "text-black"
                   : "text-retro_text_inactive"
-              } hover:text-black text-[18px] font-medium cursor-pointer ease-in-out duration-300`}
+              } hover:text-retro_secondary text-[18px] font-medium cursor-pointer ease-in-out duration-300`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <a href={`#${link.link}`}>{link.title}</a>
             </li>
           ))}
         </ul>
@@ -58,23 +58,19 @@ const Navbar = () => {
           <div
             className={`transition-opacity duration-500 ease-in-out ${
               !toggle ? "opacity-0" : "opacity-100"
-            } p-6 bg-black-300 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl drop-shadow-md bg-[rgb(255,255,255,0.15)] backdrop-blur-md`}
           >
             <ul className="list-none flex flex-row gap-10">
               {navLinks.map((link) => (
                 <li
                   key={link.id}
-                  className={`${
-                    active === link.title
-                      ? "text-white"
-                      : "text-retro_text_inactive"
-                  } hover:text-white text-[16px] font-medium cursor-pointer ease-in-out duration-300`}
+                  className="hover:text-retro_secondary text-[16px] font-medium cursor-pointer ease-in-out duration-300"
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(link.title);
                   }}
                 >
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  <a href={`#${link.link}`}>{link.title}</a>
                 </li>
               ))}
             </ul>

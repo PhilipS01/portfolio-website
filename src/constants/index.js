@@ -27,15 +27,18 @@ import {
 
 export const navLinks = [
   {
-    id: "work",
+    id: "idProjects",
+    link: "projects",
     title: "Projekte",
   },
   {
-    id: "gallery",
+    id: "idGallery",
+    link: "gallery",
     title: "Galerie",
   },
   {
-    id: "cv",
+    id: "idCV",
+    link: "cv",
     title: "CV",
   },
 ];
@@ -162,22 +165,6 @@ const projects = [
     link: "https://github.com/",
   },
   {
-    title: "Getriebe Prüfstand",
-    description:
-      "Ein variabler Prüfstand zur Leistungserfassung von zylindrischen Getrieben",
-    components: [
-      {
-        tags: [
-          {
-            name: "Getriebe-Greifer",
-            prop: "angetrieben durch Linearaktoren",
-          },
-        ],
-      },
-    ],
-    link: "https://github.com/",
-  },
-  {
     title: "Greeter",
     description:
       "Eine Infotafel für Erinnerungen, Wetter, Kameraüberwachung uvm.",
@@ -191,6 +178,22 @@ const projects = [
           {
             name: "Benutzeroberfläche",
             prop: "als Website durch flask-web-app hinter einem WSGI und einem Nginx reverse-proxy",
+          },
+        ],
+      },
+    ],
+    link: "https://github.com/",
+  },
+  {
+    title: "Getriebe Prüfstand",
+    description:
+      "Ein variabler Prüfstand zur Leistungserfassung von zylindrischen Getrieben",
+    components: [
+      {
+        tags: [
+          {
+            name: "Getriebe-Greifer",
+            prop: "angetrieben durch Linearaktoren",
           },
         ],
       },
