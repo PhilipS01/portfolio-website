@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { styles } from "../styles";
-import { Element } from "react-scroll";
 import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import Tilt from "react-parallax-tilt";
 import { projects } from "../constants";
 import { fadeIn } from "../utils/motion";
 import { SectionWrapper } from "../hoc/";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
-
-const defaultTiltOptions = {
-  tiltMaxAngleX: 5, // max tilt rotation (degrees)
-  tiltMaxAngleY: 5, // max tilt rotation (degrees)
-};
+import { MainCanvas } from "./canvas";
 
 const ProjectCard = ({ index, title, icon }) => {
   return (
@@ -32,11 +26,24 @@ const ProjectCard = ({ index, title, icon }) => {
       >
         <div
           options={{ max: 45, scale: 1, speed: 450 }}
-          className="bg-[#101010] rounded-[20px] py-5 px-12 flex justify-evenly items-center flex-col h-[500px]"
+          className="bg-[#101010] rounded-[20px] py-6 px-12 flex items-center flex-col h-[500px]"
         >
-          <h3 className="text-white text-[20px] font-bold text-center">
-            {title}
-          </h3>
+          <table className="table-fixed w-full">
+            <tbody>
+              <tr className="align-top">
+                <td className="text-white">
+                  <MainCanvas />
+                </td>
+                <td>
+                  <h3
+                    className={`${styles.ProjectCardHeadText} text-white text-[20px] font-bold float-right text-right`}
+                  >
+                    {title}{" "}
+                  </h3>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </motion.div>
     </Tilt>
@@ -58,8 +65,8 @@ const Works = () => {
             variants={fadeInVariants}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.8 }}
-            transition={{ delay: 0.5, duration: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.5, duration: 0.75 }}
           >
             <Glow color="#d79922">
               <h1 className={`${styles.sectionHeadText} glow:text-glow/50`}>

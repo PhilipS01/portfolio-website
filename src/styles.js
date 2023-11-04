@@ -8,6 +8,9 @@ const styles = {
   heroSubText:
     "text-white font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] tracking-tight",
 
+  ProjectCardHeadText:
+    "text-white font-bold lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] tracking-tight",
+
   sectionHeadText:
     "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
   sectionSubText:

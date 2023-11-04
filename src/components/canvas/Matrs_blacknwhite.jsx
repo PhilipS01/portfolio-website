@@ -8,37 +8,12 @@ export let distanceFromTop = null;
 export let distanceFromRight = null;
 export let modelScreenPosition = null;
 
-let camera;
-
-export function getMatrsDistanceFromLeft() {
-  const modelPosition = matrsModelgroup.current.position;
-  const modelWorldPosition = modelPosition
-    .clone()
-    .applyMatrix4(matrsModelgroup.current.matrixWorld);
-
-  modelScreenPosition = modelWorldPosition.project(camera);
-  distanceFromLeft = ((modelScreenPosition.x + 1) * window.innerWidth) / 2;
-  distanceFromRight = window.innerWidth - distanceFromLeft;
-  distanceFromTop = ((modelScreenPosition.y + 1) * 1280) / 2;
-}
-
 const Matrs_Model = ({ props }) => {
   matrsModelgroup = useRef();
   const { nodes, materials } = useGLTF(
     "../../../public/matrs/matrs_blacknwhite.glb"
   );
-  camera = useThree().camera;
 
-  //useEffect(() => {
-  //  const modelPosition = matrsModelgroup.current.position;
-  //  const modelWorldPosition = modelPosition
-  //    .clone()
-  //    .applyMatrix4(matrsModelgroup.current.matrixWorld);
-  //
-  //  const modelScreenPosition = modelWorldPosition.project(camera);
-  //  distanceFromLeft = ((modelScreenPosition.x + 1) * window.innerWidth) / 2;
-  //  distanceFromRight = window.innerWidth - distanceFromLeft;
-  //  distanceFromTop = ((modelScreenPosition.y + 1) * 1280) / 2;
   //}, [distance.toggled]);
 
   return (
@@ -46,9 +21,8 @@ const Matrs_Model = ({ props }) => {
       ref={matrsModelgroup}
       {...props}
       dispose={null}
-      scale={0.0035}
-      position={[-3, 2, 2.7]}
-      visible={false}
+      scale={0.004}
+      visible={true}
     >
       <mesh
         geometry={nodes.matrs_1.geometry}

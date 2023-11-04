@@ -2,22 +2,10 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import { styles } from "../styles";
 import { MainCanvas } from "./canvas";
 import { Reveal, DoubleSlideReveal } from "./util/Reveal";
-import { ChangeHero } from "./util/ChangeHero";
 import { ChangeHeroSub } from "./util/ChangeHeroSub";
-import { useSelector, useDispatch } from "react-redux";
-import { changeText, changeSubtext } from "../slices/mainHeadingSlice";
-import delay from "./util/delay";
-import ProjectProperties from "./ProjectProperties";
-import { projects } from "../constants";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { GlowCapture, Glow } from "@codaworks/react-glow";
 
 const Hero = () => {
-  const heading = useSelector((state) => state.heading);
-
-  const mainHeadingText = heading.text;
-  const mainHeadingSubText = heading.subtext;
-
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -60,25 +48,25 @@ const Hero = () => {
           style={{ opacity }}
         >
           <div id="mainHeading">
-            <ChangeHero>
-              <Reveal>
-                <motion.h1
-                  className={`${styles.heroHeadText} w-fit mx-auto glow:text-glow/50`}
-                  id="mainHeadingH1"
-                  style={{
-                    color,
-                  }}
-                >
-                  {mainHeadingText}
-                </motion.h1>
-              </Reveal>
-            </ChangeHero>
+            <Reveal>
+              <motion.h1
+                className={`${styles.heroHeadText} w-fit mx-auto glow:text-glow/50`}
+                id="mainHeadingH1"
+                style={{
+                  color,
+                }}
+              >
+                Ideen werden Realität
+              </motion.h1>
+            </Reveal>
           </div>
           <p
             className={`${styles.heroSubText} mt-4  mx-auto w-fit invert-[50%]`}
             id="subHeading"
           >
-            <ChangeHeroSub>{mainHeadingSubText}</ChangeHeroSub>
+            <ChangeHeroSub>
+              Mechatronik und Full-Stack-Entwicklung
+            </ChangeHeroSub>
           </p>
           <motion.div className="mt-7 z-10" style={{ color: color2 }}>
             <DoubleSlideReveal>
