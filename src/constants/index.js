@@ -24,6 +24,7 @@ import {
   tripguide,
   threejs,
 } from "../assets";
+import Matrs_Model from "../components/canvas/Matrs_blacknwhite";
 
 export const navLinks = [
   {
@@ -121,84 +122,71 @@ const projects = [
   {
     title: "MATRS",
     description: "Ferngesteuertes Miniatur-Geschütz",
-    components_length: 2,
-    components: [
+    model: Matrs_Model,
+    link: "matrs",
+    features: [
       {
-        name: "Miniatur-Geschütz",
         tags: [
           {
-            name: "Gieren",
-            prop: "durch 39,5 : 1 Spannungswellengetriebe",
+            name: "Fernsteuerung mittels Hanschuh",
+            prop: "Bewegungserkennung durch Sensor-Fusion",
           },
           {
-            name: "Nicken",
-            prop: "durch 3⅓ : 1 Zahnriemengetriebe",
+            name: "Präzises Gieren und Nicken",
+            prop: "Durch Spannungswellen- und Zahnriemengetriebe",
           },
           {
             name: "Drahtlose Kommunikation",
-            prop: "mittles Bluetooth Low Energy",
-          },
-        ],
-      },
-      {
-        name: "Handschuh",
-        tags: [
-          {
-            name: "Bewegungserkennung",
-            prop: "durch Sensor-Fusion eines 6-Achsen-Gyroskops",
+            prop: "Mittles Bluetooth Low Energy",
           },
           {
             name: "Virtueller Abzug",
-            prop: "durch Flex-Sensor",
-          },
-          {
-            name: "Portable",
-            prop: "dank Batteriestrom",
-          },
-          {
-            name: "Drahtlose Kommunikation",
-            prop: "mittles Bluetooth Low Energy",
+            prop: "Durch Flex-Sensor im Finger",
           },
         ],
       },
     ],
-    link: "https://github.com/",
+    github: "https://github.com/",
   },
   {
     title: "Greeter",
-    description:
-      "Eine Infotafel für Erinnerungen, Wetter, Kameraüberwachung uvm.",
-    components: [
+    description: "Infotafel für Alles",
+    link: "greeter",
+    features: [
       {
         tags: [
           {
-            name: "Externe Informationen",
-            prop: "durch Webscraping und APIs in Python",
+            name: "Kalender Sync",
+            prop: "Dank Python-APIs",
           },
           {
-            name: "Benutzeroberfläche",
-            prop: "als Website durch flask-web-app hinter einem WSGI und einem Nginx reverse-proxy",
+            name: "Web Anwendung",
+            prop: "Mit Flask, WSGI und Nginx Reverse Proxy",
           },
         ],
       },
     ],
-    link: "https://github.com/",
+    github: "https://github.com/",
   },
   {
     title: "Getriebe Prüfstand",
-    description:
-      "Ein variabler Prüfstand zur Leistungserfassung von zylindrischen Getrieben",
-    components: [
+    description: "Leistungserfassung zylindrischer Getrieben",
+    link: "pruefstand",
+    features: [
       {
         tags: [
           {
-            name: "Getriebe-Greifer",
-            prop: "angetrieben durch Linearaktoren",
+            name: "Getriebe Gripper",
+            prop: "Angetrieben von Linearaktoren",
+          },
+          {
+            name: "Kraftmessung",
+            prop: "Über Wägezelle",
           },
         ],
       },
     ],
-    link: "https://github.com/",
+    github: "https://github.com/",
   },
 ];
 

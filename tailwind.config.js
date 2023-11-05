@@ -13,7 +13,6 @@ module.exports = {
         retro_accent_red: "#cc231c",
         retro_text_dark: "#232B23",
         retro_text_inactive: "#c1ae8a",
-        retro_primary_tint: "#FAF7EF",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",

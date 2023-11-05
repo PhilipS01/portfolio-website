@@ -61,14 +61,14 @@ const Hero = () => {
             </Reveal>
           </div>
           <p
-            className={`${styles.heroSubText} mt-4  mx-auto w-fit invert-[50%]`}
+            className={`${styles.heroSubText} mt-[1em]  mx-auto w-fit invert-[50%]`}
             id="subHeading"
           >
             <ChangeHeroSub>
               Mechatronik und Full-Stack-Entwicklung
             </ChangeHeroSub>
           </p>
-          <motion.div className="mt-7 z-10" style={{ color: color2 }}>
+          <motion.div className="mt-[2em] z-10" style={{ color: color2 }}>
             <DoubleSlideReveal>
               <a
                 href="#projects"

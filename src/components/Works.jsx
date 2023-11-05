@@ -16,29 +16,64 @@ import { MainCanvas } from "./canvas";
 //glarePosition="bottom"
 //glareBorderRadius="20px"
 
-const ProjectCard = ({ index, title, icon }) => {
+const ProjectCard = ({ index, title, model, description, link, features }) => {
   return (
-    <div className="xs:w-[80%] w-full">
+    <div className="sm:w-[100%] lg:min-w-[900px] lg:max-w-[1000px] w-full">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className="w-full bg-gradient-to-b from-retro_accent_green to-retro_accent_blue p-[2px] rounded-[20px] shadow-card"
       >
         <div
           options={{ max: 45, scale: 1, speed: 450 }}
-          className="bg-[#101010] rounded-[20px] py-6 px-12 flex items-center flex-col h-[500px]"
+          className="bg-[#101010] rounded-[20px] py-6 px-12 flex items-center flex-col h-fit"
         >
           <table className="table-fixed w-full h-full">
             <tbody>
               <tr className="align-top">
-                <td className="text-white h-full">
-                  <MainCanvas />
+                <td className="text-white h-full w-[150px]">
+                  <MainCanvas model={model} />
                 </td>
-                <td>
-                  <h3
-                    className={`${styles.ProjectCardHeadText} text-white text-[20px] font-bold float-right text-right`}
+                <td className="w-[80%]">
+                  <div className="flex flex-col">
+                    <h3
+                      className={`${styles.ProjectCardTitleText} text-white font-bold float-right text-right`}
+                    >
+                      {title}
+                    </h3>
+                    <h4
+                      className={`${styles.ProjectCardDescriptionText} text-white font-bold float-right text-right`}
+                    >
+                      {description}
+                    </h4>
+                    {features[0].tags.map((tag, index) => {
+                      return (
+                        <div className="text-right mt-[1em] border-separate border-r pr-4 border-slate-500">
+                          <div
+                            key={tag + "-" + index}
+                            className={`${styles.ProjectCardFeaturesText} text-slate-200 font-bold tracking-tight`}
+                          >
+                            {tag.name}
+                          </div>
+                          <div
+                            className={`${styles.ProjectCardFeaturesText} text-slate-400`}
+                          >
+                            {tag.prop}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td className="float-right mt-[3em]">
+                  <a
+                    href={`projects/${link}`}
+                    className="text-slate-500 hover:text-slate-300 transition-all"
                   >
-                    {title}{" "}
-                  </h3>
+                    Erfahre mehr
+                  </a>
                 </td>
               </tr>
             </tbody>
@@ -55,6 +90,24 @@ const fadeInVariants = {
 };
 
 const Works = () => {
+  const [isMobile, setisMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("max-width: 500");
+
+    setisMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event) => {
+      setisMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
     <section className=" bg-retro_secondary">
       <GlowCapture>
