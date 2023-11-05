@@ -33,7 +33,11 @@ const ToolCrest = ({ index, name, icon }) => {
           options={{ max: 45, scale: 1.5, speed: 450 }}
           className="p-[10px] flex justify evenly items-center flex-col rounded-xl border-solid border-2 border-slate-700 bg-slate-800"
         >
-          <img src={icon} alt={name} className="w-12 h-12 object-contain" />
+          <img
+            src={icon}
+            alt={name}
+            className="w-12 h-12 object-contain drag-none select-none"
+          />
         </div>
       </motion.div>
     </Tilt>
@@ -70,12 +74,12 @@ const ProjectCard = ({
                   <td className="w-[80%]">
                     <div className="flex flex-col">
                       <h3
-                        className={`${styles.ProjectCardTitleText} text-white font-bold float-right text-right`}
+                        className={`${styles.ProjectCardTitleText} text-white font-bold float-right text-right select-none`}
                       >
                         {title}
                       </h3>
                       <h4
-                        className={`${styles.ProjectCardDescriptionText} text-white font-bold float-right text-right mb-[1em]`}
+                        className={`${styles.ProjectCardDescriptionText} text-white font-bold float-right text-right mb-[1em] select-none`}
                       >
                         {description}
                       </h4>

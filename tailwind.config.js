@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const antiDrag = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
@@ -25,5 +26,18 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@codaworks/react-glow/tailwind")],
+  plugins: [
+    require("@codaworks/react-glow/tailwind"),
+    antiDrag(function ({ addUtilities }) {
+      addUtilities({
+        ".drag-none": {
+          "-webkit-user-drag": "none",
+          "-khtml-user-drag": "none",
+          "-moz-user-drag": "none",
+          "-o-user-drag": "none",
+          "user-drag": "none",
+        },
+      });
+    }),
+  ],
 };
