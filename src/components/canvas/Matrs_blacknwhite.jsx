@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { lerp } from "three/src/math/MathUtils";
@@ -15,6 +15,7 @@ function Matrs_Model(props) {
     "../../../public/matrs/matrs_blacknwhite.glb"
   );
 
+  // animate
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     matrsModelgroup.current.rotation.x = lerp(

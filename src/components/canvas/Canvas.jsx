@@ -13,12 +13,11 @@ import Glove_Model from "./Glove";
 
 const MainCanvas = ({ model }) => {
   return (
-    <div className="">
+    <div className="h-[189px] lg:h-[227px]">
       <Canvas
         frameloop="demand"
         camera={{ position: [0, 0, 20], fov: 10, zoom: 0.9 }}
         gl={{ preserveDrawingBuffer: true }}
-        className="h-[500px]"
       >
         <Suspense fallback={<CanvasLoader />}>
           <pointLight position={[10, 10, 10]} intensity={0} />

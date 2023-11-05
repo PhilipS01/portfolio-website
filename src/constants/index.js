@@ -15,6 +15,7 @@ import {
   git,
   figma,
   docker,
+  cpp,
   meta,
   starbucks,
   tesla,
@@ -23,6 +24,8 @@ import {
   jobit,
   tripguide,
   threejs,
+  fusion360,
+  python,
 } from "../assets";
 import Matrs_Model from "../components/canvas/Matrs_blacknwhite";
 
@@ -116,6 +119,18 @@ const technologies = [
     name: "docker",
     icon: docker,
   },
+  {
+    name: "cpp",
+    icon: cpp,
+  },
+  {
+    name: "fusion360",
+    icon: fusion360,
+  },
+  {
+    name: "python",
+    icon: python,
+  },
 ];
 
 const projects = [
@@ -146,6 +161,16 @@ const projects = [
         ],
       },
     ],
+    tools: [
+      {
+        name: "cpp",
+        icon: cpp,
+      },
+      {
+        name: "fusion360",
+        icon: fusion360,
+      },
+    ],
     github: "https://github.com/",
   },
   {
@@ -166,6 +191,12 @@ const projects = [
         ],
       },
     ],
+    tools: [
+      {
+        name: "python",
+        icon: python,
+      },
+    ],
     github: "https://github.com/",
   },
   {
@@ -184,6 +215,12 @@ const projects = [
             prop: "Über Wägezelle",
           },
         ],
+      },
+    ],
+    tools: [
+      {
+        name: "fusion360",
+        icon: fusion360,
       },
     ],
     github: "https://github.com/",

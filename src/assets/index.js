@@ -1,6 +1,3 @@
-import logo from "./logo.svg";
-import logoPS from "./logops.svg";
-import logoPS2 from "./logops3.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -23,6 +20,9 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import cpp from "./tech/cpp.png";
+import fusion360 from "./tech/fusion360.png";
+import python from "./tech/python.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -33,13 +33,9 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
-import selected3d from "./3dselected.svg";
 import arrownext from "./arrow_next.svg";
 
 export {
-  logo,
-  logoPS,
-  logoPS2,
   logoarrow,
   backend,
   creator,
@@ -68,6 +64,8 @@ export {
   carrent,
   jobit,
   tripguide,
-  selected3d,
   arrownext,
+  cpp,
+  fusion360,
+  python,
 };
