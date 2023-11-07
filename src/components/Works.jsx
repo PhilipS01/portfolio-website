@@ -16,27 +16,32 @@ import { MainCanvas } from "./canvas";
 //glarePosition="bottom"
 //glareBorderRadius="20px"
 
-const ToolCrest = ({ index, name, icon }) => {
+const ToolCrest = ({ index, name, icon, isMobile }) => {
   return (
     <Tilt
       tiltMaxAngleX={20}
       tiltMaxAngleY={20}
       glareEnable={true}
       glareMaxOpacity={0.4}
+      scale={1.075}
       glareColor="#458587"
       glarePosition="bottom"
-      glareBorderRadius="16px"
-      className="mr-3"
+      glareBorderRadius="13px"
+      className={`${isMobile ? "mt-[2em] " : " "} mr-3`}
     >
       <motion.div variants={fadeIn("right", "spring", 1.5 + 0.25 * index, 0.5)}>
         <div
           options={{ max: 45, scale: 1.5, speed: 450 }}
-          className="p-[10px] flex justify evenly items-center flex-col rounded-xl border-solid border-2 border-slate-700 bg-slate-800"
+          className={`${
+            isMobile ? "p-[8px] " : "p-[10px] "
+          }  flex justify evenly items-center flex-col rounded-xl border-solid border-2 border-retro_accent_blue/50`}
         >
           <img
             src={icon}
             alt={name}
-            className="w-12 h-12 object-contain drag-none select-none"
+            className={`${
+              isMobile ? "w-9 h-9 " : "w-12 h-12 "
+            } object-contain drag-none select-none`}
           />
         </div>
       </motion.div>
@@ -87,7 +92,7 @@ const ProjectCard = ({
                         return (
                           <div className="text-right mt-[1em] border-separate border-r pr-4 border-slate-500">
                             <div
-                              key={tag + "-" + index}
+                              key={tag.name + "-" + index}
                               className={`${styles.ProjectCardFeaturesText} text-slate-200 font-bold tracking-tight`}
                             >
                               {tag.name}
@@ -104,8 +109,8 @@ const ProjectCard = ({
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[100%]">
-                    <div className="flex flex-row">
+                  <td className="w-[400px]">
+                    <div className="flex flex-row w-[400px]">
                       {tools.map((tool, index) => (
                         <ToolCrest key={tool.name} index={index} {...tool} />
                       ))}
@@ -150,7 +155,7 @@ const ProjectCard = ({
                         return (
                           <div className="mt-[1em]">
                             <div
-                              key={tag + "-" + index}
+                              key={tag.name + "-" + index}
                               className={`${styles.ProjectCardFeaturesText} text-slate-200 font-bold tracking-tight`}
                             >
                               {tag.name}
@@ -165,6 +170,18 @@ const ProjectCard = ({
                       })}
                     </div>
                   </td>
+                </tr>
+                <tr>
+                  <div className="flex flex-row">
+                    {tools.map((tool, index) => (
+                      <ToolCrest
+                        key={tool.name}
+                        index={index}
+                        isMobile={isMobile}
+                        {...tool}
+                      />
+                    ))}
+                  </div>
                 </tr>
                 <tr>
                   <td className="pt-[1em]">
@@ -210,7 +227,7 @@ const Works = () => {
   }, []);
 
   return (
-    <section className=" bg-retro_secondary">
+    <section className="bg-retro_secondary">
       <GlowCapture>
         <div>
           <motion.div
@@ -221,7 +238,7 @@ const Works = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.5, duration: 0.75 }}
           >
-            <Glow color="#d79922">
+            <Glow color="#458587">
               <h1 className={`${styles.sectionHeadText} glow:text-glow/50`}>
                 Projekte
               </h1>

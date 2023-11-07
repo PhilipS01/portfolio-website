@@ -8,8 +8,6 @@ import {
   ContactShadows,
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
-import Matrs_Model from "./Matrs_blacknwhite";
-import Glove_Model from "./Glove";
 
 const MainCanvas = ({ model }) => {
   return (
@@ -20,7 +18,7 @@ const MainCanvas = ({ model }) => {
         gl={{ preserveDrawingBuffer: true }}
       >
         <Suspense fallback={<CanvasLoader />}>
-          <pointLight position={[10, 10, 10]} intensity={0} />
+          <directionalLight position={[0, 10, 10]} intensity={0.3} />
           {model}
           <Environment preset="city" />
         </Suspense>

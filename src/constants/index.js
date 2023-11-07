@@ -26,8 +26,12 @@ import {
   threejs,
   fusion360,
   python,
+  threed_printing,
+  electronics,
 } from "../assets";
-import Matrs_Model from "../components/canvas/Matrs_blacknwhite";
+//import Matrs_Model from "../components/canvas/Matrs_blacknwhite";
+import Matrs_Model from "../components/canvas/Turret_new";
+import ATR_Model from "../components/canvas/Atr";
 
 export const navLinks = [
   {
@@ -131,6 +135,14 @@ const technologies = [
     name: "python",
     icon: python,
   },
+  {
+    name: "3D printing",
+    icon: threed_printing,
+  },
+  {
+    name: "electronics",
+    icon: electronics,
+  },
 ];
 
 const projects = [
@@ -143,7 +155,7 @@ const projects = [
       {
         tags: [
           {
-            name: "Fernsteuerung mittels Hanschuh",
+            name: "Fernsteuerung mittels Handschuh",
             prop: "Bewegungserkennung durch Sensor-Fusion",
           },
           {
@@ -170,6 +182,14 @@ const projects = [
         name: "fusion360",
         icon: fusion360,
       },
+      {
+        name: "electronics",
+        icon: electronics,
+      },
+      {
+        name: "3D printing",
+        icon: threed_printing,
+      },
     ],
     github: "https://github.com/",
   },
@@ -185,6 +205,14 @@ const projects = [
             prop: "Dank Python-APIs",
           },
           {
+            name: "Stundenplan Sync",
+            prop: "Durch Webscraping von TUCaN",
+          },
+          {
+            name: "Wetterdienst Info",
+            prop: "Ebenfalls durch Webscraping",
+          },
+          {
             name: "Web Anwendung",
             prop: "Mit Flask, WSGI und Nginx Reverse Proxy",
           },
@@ -196,23 +224,40 @@ const projects = [
         name: "python",
         icon: python,
       },
+      {
+        name: "HTML 5",
+        icon: html,
+      },
+      {
+        name: "CSS 3",
+        icon: css,
+      },
+      {
+        name: "JavaScript",
+        icon: javascript,
+      },
     ],
     github: "https://github.com/",
   },
   {
     title: "Getriebe Prüfstand",
     description: "Leistungserfassung zylindrischer Getrieben",
+    model: ATR_Model,
     link: "pruefstand",
     features: [
       {
         tags: [
+          {
+            name: "Schwebende Befestigung",
+            prop: "Durch Gripper und Lineare Schienen",
+          },
           {
             name: "Getriebe Gripper",
             prop: "Angetrieben von Linearaktoren",
           },
           {
             name: "Kraftmessung",
-            prop: "Über Wägezelle",
+            prop: "Über Wägezelle am Endeffektor",
           },
         ],
       },

@@ -23,6 +23,8 @@ import threejs from "./tech/threejs.svg";
 import cpp from "./tech/cpp.png";
 import fusion360 from "./tech/fusion360.png";
 import python from "./tech/python.png";
+import threed_printing from "./tech/3d_printing_2.png";
+import electronics from "./tech/electronics.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -68,4 +70,6 @@ export {
   cpp,
   fusion360,
   python,
+  threed_printing,
+  electronics,
 };
