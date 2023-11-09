@@ -7,6 +7,7 @@ import { fadeIn } from "../utils/motion";
 import { SectionWrapper } from "../hoc/";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { MainCanvas } from "./canvas";
+import greeter_screenshot from "../../public/greeter_screenshot.png";
 
 //tiltMaxAngleX={2}
 //tiltMaxAngleY={2}
@@ -18,18 +19,18 @@ import { MainCanvas } from "./canvas";
 
 const ToolCrest = ({ index, name, icon, isMobile }) => {
   return (
-    <Tilt
-      tiltMaxAngleX={20}
-      tiltMaxAngleY={20}
-      glareEnable={true}
-      glareMaxOpacity={0.4}
-      scale={1.075}
-      glareColor="#458587"
-      glarePosition="bottom"
-      glareBorderRadius="13px"
-      className={`${isMobile ? "mt-[2em] " : " "} mr-3`}
-    >
-      <motion.div variants={fadeIn("right", "spring", 1.5 + 0.25 * index, 0.5)}>
+    <motion.div variants={fadeIn("right", "spring", 1.5 + 0.25 * index, 0.5)}>
+      <Tilt
+        tiltMaxAngleX={20}
+        tiltMaxAngleY={20}
+        glareEnable={true}
+        glareMaxOpacity={0.5}
+        scale={1.075}
+        glareColor="#458587"
+        glarePosition="bottom"
+        glareBorderRadius="13px"
+        className={`${isMobile ? "mt-[2em] " : " "} mr-3`}
+      >
         <div
           options={{ max: 45, scale: 1.5, speed: 450 }}
           className={`${
@@ -44,8 +45,8 @@ const ToolCrest = ({ index, name, icon, isMobile }) => {
             } object-contain drag-none select-none`}
           />
         </div>
-      </motion.div>
-    </Tilt>
+      </Tilt>
+    </motion.div>
   );
 };
 
@@ -67,14 +68,34 @@ const ProjectCard = ({
       >
         <div
           options={{ max: 45, scale: 1, speed: 450 }}
-          className="bg-[#101010] rounded-[20px] py-6 px-12 flex items-center flex-col h-fit"
+          className="bg-[url('../../public/greeter_screenshot.png')] rounded-[20px] py-6 px-12 flex items-center flex-col h-fit"
         >
           {isMobile == false && (
             <table className="table-fixed w-full h-full">
               <tbody>
                 <tr className="align-top">
                   <td className="text-white h-[full] lg:w-[200px] w-[150px]">
-                    <MainCanvas model={model} />
+                    {title != "Greeter" && <MainCanvas model={model} />}
+                    {title == "Greeter" && (
+                      <Tilt
+                        tiltMaxAngleX={20}
+                        tiltMaxAngleY={20}
+                        glareEnable={true}
+                        glareMaxOpacity={0.3}
+                        scale={2}
+                        glareColor="#fff"
+                        glarePosition="all"
+                        glareBorderRadius="13px"
+                        className="mt-6"
+                      >
+                        <div className="flex justify evenly items-center flex-col">
+                          <img
+                            className="rounded-xl"
+                            src={greeter_screenshot}
+                          />
+                        </div>
+                      </Tilt>
+                    )}
                   </td>
                   <td className="w-[80%]">
                     <div className="flex flex-col">
