@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { styles } from "../styles";
 import { motion, useAnimation } from "framer-motion";
 import Tilt from "react-parallax-tilt";
@@ -7,17 +7,9 @@ import { fadeIn } from "../utils/motion";
 import { SectionWrapper } from "../hoc/";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { MainCanvas } from "./canvas";
-import greeter_screenshot from "../../public/greeter_screenshot.png";
+import { greeter_screenshot, greeter_screenshot2 } from "../assets/";
 
-//tiltMaxAngleX={2}
-//tiltMaxAngleY={2}
-//glareEnable={true}
-//glareMaxOpacity={0.4}
-//glareColor="#458587"
-//glarePosition="bottom"
-//glareBorderRadius="20px"
-
-const ToolCrest = ({ index, name, icon, isMobile }) => {
+export const ToolCrest = ({ index, name, icon, isMobile }) => {
   return (
     <motion.div variants={fadeIn("right", "spring", 1.5 + 0.25 * index, 0.5)}>
       <Tilt
@@ -49,7 +41,7 @@ const ToolCrest = ({ index, name, icon, isMobile }) => {
     </motion.div>
   );
 };
-
+// bg-[url('../../public/greeter_screenshot.png')] bg-top bg-cover
 const ProjectCard = ({
   index,
   title,
@@ -61,40 +53,46 @@ const ProjectCard = ({
   isMobile,
 }) => {
   return (
-    <div className="sm:w-[100%] lg:min-w-[900px] lg:max-w-[1000px] w-full">
+    <div className="sm:w-[100%] lg:min-w-[900px] lg:max-w-[100%] w-full select-none">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className="w-full bg-gradient-to-b from-retro_accent_green to-retro_accent_blue p-[2px] rounded-[20px] shadow-card"
       >
         <div
           options={{ max: 45, scale: 1, speed: 450 }}
-          className="bg-[url('../../public/greeter_screenshot.png')] rounded-[20px] py-6 px-12 flex items-center flex-col h-fit"
+          className="bg-[#101010] rounded-[20px] py-6 px-12 flex items-center flex-col h-fit"
         >
           {isMobile == false && (
             <table className="table-fixed w-full h-full">
               <tbody>
                 <tr className="align-top">
                   <td className="text-white h-[full] lg:w-[200px] w-[150px]">
-                    {title != "Greeter" && <MainCanvas model={model} />}
+                    {title != "Greeter" && (
+                      <Suspense>
+                        <MainCanvas model={model} />
+                      </Suspense>
+                    )}
                     {title == "Greeter" && (
-                      <Tilt
-                        tiltMaxAngleX={20}
-                        tiltMaxAngleY={20}
-                        glareEnable={true}
-                        glareMaxOpacity={0.3}
-                        scale={2}
-                        glareColor="#fff"
-                        glarePosition="all"
-                        glareBorderRadius="13px"
-                        className="mt-6"
-                      >
-                        <div className="flex justify evenly items-center flex-col">
-                          <img
-                            className="rounded-xl"
-                            src={greeter_screenshot}
-                          />
-                        </div>
-                      </Tilt>
+                      <div>
+                        <Tilt
+                          tiltMaxAngleX={10}
+                          tiltMaxAngleY={10}
+                          glareEnable={true}
+                          glareMaxOpacity={0.3}
+                          scale={2}
+                          glareColor="#fff"
+                          glarePosition="all"
+                          glareBorderRadius="13px"
+                          className="mt-6 w-[300px]"
+                        >
+                          <div className="flex justify evenly items-center flex-col">
+                            <img
+                              className="rounded-xl opacity-70 hover:opacity-100"
+                              src={greeter_screenshot2}
+                            />
+                          </div>
+                        </Tilt>
+                      </div>
                     )}
                   </td>
                   <td className="w-[80%]">
@@ -139,7 +137,7 @@ const ProjectCard = ({
                   </td>
                   <td className="float-right mt-[3em]">
                     <a
-                      href={`projects/${link}`}
+                      href={`/projects/${link}`}
                       className="text-slate-500 hover:text-slate-300 transition-all"
                     >
                       Erfahre mehr
@@ -156,7 +154,33 @@ const ProjectCard = ({
               <tbody>
                 <tr className="align-top">
                   <td className="text-white h-full w-full">
-                    <MainCanvas model={model} />
+                    {title != "Greeter" && (
+                      <Suspense>
+                        <MainCanvas model={model} />
+                      </Suspense>
+                    )}
+                    {title == "Greeter" && (
+                      <div>
+                        <Tilt
+                          tiltMaxAngleX={20}
+                          tiltMaxAngleY={20}
+                          glareEnable={true}
+                          glareMaxOpacity={0.3}
+                          scale={1}
+                          glareColor="#fff"
+                          glarePosition="all"
+                          glareBorderRadius="13px"
+                          className="my-6"
+                        >
+                          <div className="flex justify evenly items-center flex-col">
+                            <img
+                              className="rounded-xl opacity-70 hover:opacity-100"
+                              src={greeter_screenshot2}
+                            />
+                          </div>
+                        </Tilt>
+                      </div>
+                    )}
                   </td>
                 </tr>
                 <tr>
@@ -193,7 +217,7 @@ const ProjectCard = ({
                   </td>
                 </tr>
                 <tr>
-                  <div className="flex flex-row">
+                  <div className="flex flex-row justify-center">
                     {tools.map((tool, index) => (
                       <ToolCrest
                         key={tool.name}
@@ -207,7 +231,7 @@ const ProjectCard = ({
                 <tr>
                   <td className="pt-[1em]">
                     <a
-                      href={`projects/${link}`}
+                      href={`/projects/${link}`}
                       className={`${styles.ProjectCardFeaturesText} text-slate-500 hover:text-slate-300 transition-all`}
                     >
                       Erfahre mehr
@@ -248,7 +272,7 @@ const Works = () => {
   }, []);
 
   return (
-    <section className="bg-retro_secondary">
+    <section className="bg-retro_secondary pb-14">
       <GlowCapture>
         <div>
           <motion.div
@@ -265,7 +289,9 @@ const Works = () => {
               </h1>
             </Glow>
 
-            <p className="text-white">Eine Kollektion meines ganzen Stolzes.</p>
+            <p className="text-white/60 sm:text-[20px] text-[14px]">
+              Eine Kollektion meines ganzen Stolzes.
+            </p>
           </motion.div>
         </div>
 

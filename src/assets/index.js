@@ -36,6 +36,8 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
 import arrownext from "./arrow_next.svg";
+import greeter_screenshot from "./greeter_screenshot.png";
+import greeter_screenshot2 from "./greeter_screenshot2.png";
 
 export {
   logoarrow,
@@ -72,4 +74,6 @@ export {
   python,
   threed_printing,
   electronics,
+  greeter_screenshot,
+  greeter_screenshot2,
 };

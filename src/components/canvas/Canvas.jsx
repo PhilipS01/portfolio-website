@@ -17,13 +17,10 @@ const MainCanvas = ({ model }) => {
         camera={{ position: [0, 0, 20], fov: 10, zoom: 0.9 }}
         gl={{ preserveDrawingBuffer: true }}
       >
-        <Suspense fallback={<CanvasLoader />}>
-          <directionalLight position={[0, 10, 10]} intensity={0.3} />
-          {model}
-          <Environment preset="city" />
-        </Suspense>
+        <directionalLight position={[0, 10, 10]} intensity={0.3} />
+        {model}
+        <Environment preset="city" />
 
-        <Preload all />
         <OrbitControls
           enablePan={false}
           enableZoom={false}

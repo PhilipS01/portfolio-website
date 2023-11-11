@@ -194,6 +194,41 @@ const projects = [
     github: "https://github.com/",
   },
   {
+    title: "Getriebe Prüfstand",
+    description: "Leistungserfassung zylindrischer Getrieben",
+    model: ATR_Model,
+    link: "pruefstand",
+    features: [
+      {
+        tags: [
+          {
+            name: "Schwebende Befestigung",
+            prop: "Durch Gripper und Lineare Schienen",
+          },
+          {
+            name: "Getriebe Gripper",
+            prop: "Angetrieben von Linearaktoren",
+          },
+          {
+            name: "Kraftmessung",
+            prop: "Über Wägezelle am Endeffektor",
+          },
+        ],
+      },
+    ],
+    tools: [
+      {
+        name: "fusion360",
+        icon: fusion360,
+      },
+      {
+        name: "python",
+        icon: python,
+      },
+    ],
+    github: "https://github.com/",
+  },
+  {
     title: "Greeter",
     description: "Infotafel für Alles",
     link: "greeter",
@@ -239,37 +274,85 @@ const projects = [
     ],
     github: "https://github.com/",
   },
+];
+
+const cv = [
   {
-    title: "Getriebe Prüfstand",
-    description: "Leistungserfassung zylindrischer Getrieben",
-    model: ATR_Model,
-    link: "pruefstand",
-    features: [
+    title: "AKADEMISCHE LAUFBAHN",
+    items: [
       {
-        tags: [
+        date: "Seit Oktober 2023",
+        item_title: "TU-Darmstadt",
+        description:
+          "Studium im B.Sc. Mechatronik\nFachbereich Elektro- und Informationstechnik",
+      },
+      {
+        date: "Juni 2023",
+        item_title: "Berufsbildungszentrum Schmalkalden",
+        description:
+          "Allgemeine Hochschulreife mit ∅ 1,9\nFachrichtung Technik\nSchwerpunkt Daten- und Informationstechnik",
+      },
+      {
+        date: "Juni 2019",
+        item_title: "Staatliche Regelschule Schmalkalden",
+        description: "Mittlere Reife mit ∅ 1,1",
+      },
+    ],
+  },
+  {
+    title: "BERUFSERFAHRUNG",
+    items: [
+      {
+        date: "Januar - Juli 2022",
+        item_title: "Landratsamt Schmalkalden Meiningen",
+        description:
+          "Kommunaler IT-Service\nAufgaben: Interne Knowledgebase Entwicklung,\nIT-Außendienst an Schulen des Landkreises",
+      },
+      {
+        date: "2018 - 2019",
+        item_title: "Diverse Berufspraktika der Realschule",
+        description: "IT-Systemkaufmann, Versicherungskaufmann",
+      },
+    ],
+  },
+  {
+    title: "KENNTNISSE UND INTERESSEN",
+    items: [
+      {
+        category: "Technik & IT",
+        subitems: [
           {
-            name: "Schwebende Befestigung",
-            prop: "Durch Gripper und Lineare Schienen",
+            item_title: "Programmiersprachen",
+            description: "C++, C#, Python, JS, HTML, CSS",
           },
           {
-            name: "Getriebe Gripper",
-            prop: "Angetrieben von Linearaktoren",
+            item_title: "Design & Prototyping",
+            description:
+              "Fusion360, Cura, PlatformIO, Figma, Blender,\nGIMP, Kdenlive",
           },
           {
-            name: "Kraftmessung",
-            prop: "Über Wägezelle am Endeffektor",
+            item_title: "Betriebssysteme & Open Source Mindset",
+            description: "Linux (Arch, Ubuntu, Debian), Git",
           },
         ],
       },
-    ],
-    tools: [
       {
-        name: "fusion360",
-        icon: fusion360,
+        category: "Hobbies",
+        subitems: [
+          { description: "3D-Druck, Mikroelektronik" },
+          { description: "Gewichtheben, Joggen, Lesen" },
+        ],
+      },
+      {
+        category: "Fremdsprachen",
+        subitems: [
+          { description: "Deutsch (Muttersprache)" },
+          { description: "Englisch (fließend)" },
+          { description: "Französisch (Grundkrenntnisse)" },
+        ],
       },
     ],
-    github: "https://github.com/",
   },
 ];
 
-export { services, technologies, projects };
+export { services, technologies, projects, cv };

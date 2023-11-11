@@ -37,6 +37,9 @@ module.exports = {
           "-o-user-drag": "none",
           "user-drag": "none",
         },
+        ".floating-animation": {
+          animation: "float 13s ease-in-out infinite",
+        },
       });
     }),
   ],
