@@ -56,7 +56,7 @@ const ProjectCard = ({
     <div className="sm:w-[100%] lg:min-w-[900px] lg:max-w-[100%] w-full select-none">
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full bg-gradient-to-b from-retro_accent_green to-retro_accent_blue p-[2px] rounded-[20px] shadow-card"
+        className="w-full bg-gradient-to-b bg-gradient-to-br from-green-400 to-blue-500 p-[2px] rounded-[20px] shadow-card"
       >
         <div
           options={{ max: 45, scale: 1, speed: 450 }}
@@ -287,7 +287,7 @@ const Works = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.5, duration: 0.75 }}
           >
-            <Glow color="#458587">
+            <Glow color="#16a34a">
               <h1 className={`${styles.sectionHeadText} glow:text-glow/50`}>
                 Projekte
               </h1>

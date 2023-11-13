@@ -308,7 +308,8 @@ const cv = [
         iconBg: "#e7e8e2",
       },
     ],
-    bgColor: "#458587",
+    bgColor: "#0ea5e9",
+    bgColor2: "#2563eb",
   },
   {
     title: "Berufserfahrung",
@@ -330,7 +331,8 @@ const cv = [
         iconBg: "#e7e8e2",
       },
     ],
-    bgColor: "#1B3536",
+    bgColor: "#34d399",
+    bgColor2: "#16a34a",
   },
   {
     title: "Kenntnisse und Interessen",
@@ -343,7 +345,7 @@ const cv = [
           "Linux (Arch, Ubuntu, Debian), Git",
         ],
         icon: neuralnet,
-        iconBg: "#e9dab1",
+        iconBg: "#fff",
       },
       {
         date: "Hobbies",
@@ -352,7 +354,7 @@ const cv = [
           "Gewichtheben, Joggen, Lesen",
         ],
         icon: biceps,
-        iconBg: "#7E9DFF",
+        iconBg: "#fff",
       },
       {
         date: "Fremdsprachen",
@@ -362,10 +364,11 @@ const cv = [
           "Französisch (Grundkrenntnisse)",
         ],
         icon: langs,
-        iconBg: "#539ec5",
+        iconBg: "#e7e8e2",
       },
     ],
-    bgColor: "#458587",
+    bgColor: "#E95420",
+    bgColor2: "#772953",
   },
 ];
 

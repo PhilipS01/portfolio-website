@@ -18,12 +18,13 @@ const CVCard = ({
   iconBg,
   v2,
   bgColor,
+  bgColor2,
 }) => (
   <VerticalTimelineElement
     contentStyle={{
       background: "#000",
       color: "#fff",
-      backgroundImage: `linear-gradient(to bottom right, ${bgColor}, #232c2e)`,
+      backgroundImage: `linear-gradient(to bottom right, ${bgColor}, ${bgColor2})`,
     }}
     contentArrowStyle={{ borderRight: "7px solid #bcbcbc" }}
     date={date}
@@ -68,7 +69,7 @@ const CV = () => {
       <GlowCapture>
         <div>
           <motion.div variants={textVariant()} className="text-center">
-            <Glow color="#458587">
+            <Glow color="#0ea5e9">
               <h1 className={`${styles.sectionHeadText} glow:text-glow/50`}>
                 curriculum vitae
               </h1>
@@ -96,6 +97,7 @@ const CV = () => {
                         {...items}
                         v2={false}
                         bgColor={group.bgColor}
+                        bgColor2={group.bgColor2}
                       />
                     ))}
                   </VerticalTimeline>
@@ -116,6 +118,7 @@ const CV = () => {
                         {...items}
                         v2={true}
                         bgColor={group.bgColor}
+                        bgColor2={group.bgColor2}
                       />
                     ))}
                   </VerticalTimeline>
@@ -125,6 +128,15 @@ const CV = () => {
           })}
         </div>
       </GlowCapture>
+      <div className="text-white text-right width-full mt-5">
+        <a
+          href="../../public/Philip_Simon_CV.pdf"
+          download={true}
+          className="sm:text-[20px] text-[14px] transition-all hover:font-bold text-slate-500 hover:text-slate-300 md:mr-5 mr-3"
+        >
+          Oder zum Download
+        </a>
+      </div>
     </section>
   );
 };

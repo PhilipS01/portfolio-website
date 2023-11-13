@@ -73,7 +73,7 @@ const Hero = () => {
               <a
                 href="#projects"
                 id="direct_work_link"
-                className="font-medium hover:font-bold hover:text-2xl text-xl transition-all bg-clip-text bg-gradient-to-r from-[#61A457] to-[#348C8E]"
+                className="font-medium hover:font-bold hover:text-2xl text-xl transition-all bg-clip-text bg-gradient-to-br from-green-400 to-blue-500"
               >
                 Direkt zu den Projekten ➜
               </a>
