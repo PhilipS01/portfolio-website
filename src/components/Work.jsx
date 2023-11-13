@@ -160,7 +160,7 @@ const ProjectCard = ({
                 <tr className="align-top">
                   <td className="text-white h-full w-full">
                     {title != "Greeter" && (
-                      <Suspense>
+                      <Suspense fallback={<span>Lädt ...</span>}>
                         <MainCanvas model={model} />
                       </Suspense>
                     )}

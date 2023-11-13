@@ -24,17 +24,33 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Kontakt</h3>
 
         <p className="text-white mt-4 flex gap-5">
-          <a className="cursor-pointer hover:font-medium">
-            <span className="flex align-middle leading-7">
-              <span className="mr-1">✉️</span>E-Mail
+          <a
+            className="cursor-pointer hover:font-medium"
+            onClick={() => {
+              navigator.clipboard.writeText("philip.si@pm.me");
+
+              const email = document.getElementById("email_link");
+              email.children[0].innerHTML = "Kopiert!";
+            }}
+          >
+            <span className="flex align-middle leading-7" id="email_link">
+              <span>
+                ✉️<span className="ml-1">E-Mail</span>
+              </span>
             </span>
           </a>
-          <a className="cursor-pointer hover:font-medium">
+          <a
+            href="tel:+4915146170784"
+            className="cursor-pointer hover:font-medium"
+          >
             <span className="flex align-middle leading-7">
               <span className="mr-1">☎️</span>Telefon
             </span>
           </a>
-          <a className="cursor-pointer hover:font-medium">
+          <a
+            href="https://gitlab.com/PhilipS01"
+            className="cursor-pointer hover:font-medium"
+          >
             <span className="flex align-middle leading-7">
               <img src={git} className="h-[25px] mr-1" />
               GitLab
