@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { CV, Contact, Hero, Navbar, Tech, Works } from "./components";
+import { CV, Contact, Hero, Navbar, Work } from "./components";
 
 export const sm_windowWidth = 1200;
 
@@ -10,12 +10,9 @@ function App() {
       <div className="relative z-0 bg-retro_secondary text-black">
         <Navbar />
         <Hero />
-        <Works />
+        <Work />
         <CV />
-        <Tech />
-        <div className="relative z-0">
-          <Contact />
-        </div>
+        <Contact />
       </div>
     </BrowserRouter>
   );

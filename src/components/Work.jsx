@@ -4,10 +4,10 @@ import { motion, useAnimation } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import { projects } from "../constants";
 import { fadeIn } from "../utils/motion";
-import { SectionWrapper } from "../hoc/";
+import { SectionWrapper } from "../hoc";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { MainCanvas } from "./canvas";
-import { greeter_screenshot, greeter_screenshot2 } from "../assets/";
+import { greeter_screenshot2, github } from "../assets";
 
 export const ToolCrest = ({ index, name, icon, isMobile }) => {
   return (
@@ -139,13 +139,11 @@ const ProjectCard = ({
                       ))}
                     </div>
                   </td>
-                  <td className="float-right mt-[3.5em]">
-                    <a
-                      href={`/projects/${link}`}
-                      className="text-slate-500 hover:text-slate-300 transition-all"
-                    >
-                      Erfahre mehr
-                    </a>
+                  <td className="float-right mt-[3em]">
+                    <img
+                      src={github}
+                      className="w-[40px] h-[40px] object-contain opacity-60 hover:opacity-100 transition-all cursor-pointer"
+                    />
                   </td>
                 </tr>
               </tbody>
@@ -256,7 +254,7 @@ const fadeInVariants = {
   animate: { opacity: 1, y: 0 },
 };
 
-const Works = () => {
+const Work = () => {
   const [isMobile, setisMobile] = useState(false);
 
   useEffect(() => {
@@ -314,4 +312,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "projects");
+export default SectionWrapper(Work, "projects");

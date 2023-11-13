@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import "react-vertical-timeline-component/style.min.css";
 import { SectionWrapper } from "../hoc/";
-import { textVariant } from "../utils/motion";
+import { fadeIn, textVariant } from "../utils/motion";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { cv } from "../constants";
 
@@ -63,12 +63,24 @@ const CVCard = ({
   </VerticalTimelineElement>
 );
 
+const fadeInVariants = {
+  initial: { opacity: 0, y: 100 },
+  animate: { opacity: 1, y: 0 },
+};
+
 const CV = () => {
   return (
     <section className="bg-retro_secondary pb-14">
       <GlowCapture>
         <div>
-          <motion.div variants={textVariant()} className="text-center">
+          <motion.div
+            className="text-center"
+            variants={fadeInVariants}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.5, duration: 0.75 }}
+          >
             <Glow color="#0ea5e9">
               <h1 className={`${styles.sectionHeadText} glow:text-glow/50`}>
                 curriculum vitae

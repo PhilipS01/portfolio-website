@@ -1,17 +1,9 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
-  nodejs,
-  mongodb,
   git,
   figma,
   docker,
@@ -49,100 +41,6 @@ export const navLinks = [
     id: "idCV",
     link: "cv",
     title: "CV",
-  },
-];
-
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
-];
-
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
-  {
-    name: "cpp",
-    icon: cpp,
-  },
-  {
-    name: "fusion360",
-    icon: fusion360,
-  },
-  {
-    name: "python",
-    icon: python,
-  },
-  {
-    name: "3D printing",
-    icon: threed_printing,
-  },
-  {
-    name: "electronics",
-    icon: electronics,
   },
 ];
 
@@ -372,4 +270,4 @@ const cv = [
   },
 ];
 
-export { services, technologies, projects, cv };
+export { projects, cv };
