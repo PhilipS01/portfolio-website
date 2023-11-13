@@ -51,6 +51,7 @@ const ProjectCard = ({
   features,
   tools,
   isMobile,
+  git_link,
 }) => {
   return (
     <div className="sm:w-[100%] lg:min-w-[900px] lg:max-w-[100%] w-full select-none">
@@ -140,10 +141,12 @@ const ProjectCard = ({
                     </div>
                   </td>
                   <td className="float-right mt-[3em]">
-                    <img
-                      src={github}
-                      className="w-[40px] h-[40px] object-contain opacity-60 hover:opacity-100 transition-all cursor-pointer"
-                    />
+                    <a href={git_link} target="_blank">
+                      <img
+                        src={github}
+                        className="h-[40px] object-contain opacity-60 hover:opacity-100 hover:scale-110 transition-all cursor-pointer"
+                      />
+                    </a>
                   </td>
                 </tr>
               </tbody>

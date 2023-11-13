@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import "react-vertical-timeline-component/style.min.css";
 import { SectionWrapper } from "../hoc/";
-import { fadeIn, textVariant } from "../utils/motion";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { cv } from "../constants";
 
@@ -144,7 +143,7 @@ const CV = () => {
         <a
           href="../../public/Philip_Simon_CV.pdf"
           download={true}
-          className="sm:text-[20px] text-[14px] transition-all hover:font-bold text-slate-500 hover:text-slate-300 md:mr-5 mr-3"
+          className="sm:text-[20px] text-[14px] transition-all hover:font-bold text-slate-500 hover:text-slate-300 md:mr-5 mr-3 px-4 py-1 bg-white/5 rounded-xl hover:bg-white/0"
         >
           Oder zum Download
         </a>

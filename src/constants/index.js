@@ -90,7 +90,8 @@ const projects = [
         icon: threed_printing,
       },
     ],
-    github: "https://github.com/",
+    git_link:
+      "https://gitlab.com/PhilipS01/motion-actuated-turret-remote-system",
   },
   {
     title: "Getriebe Prüfstand",
@@ -125,7 +126,7 @@ const projects = [
         icon: python,
       },
     ],
-    github: "https://github.com/",
+    git_link: "https://github.com/",
   },
   {
     title: "Greeter",
@@ -171,7 +172,7 @@ const projects = [
         icon: javascript,
       },
     ],
-    github: "https://github.com/",
+    git_link: "https://github.com/",
   },
 ];
 

@@ -66,7 +66,7 @@ function ATR_Model(props) {
           />
           <mesh
             geometry={nodes.ATR_6.geometry}
-            material={materials["Aluminium_-_satiniert_1"]}
+            material={materials["Aluminium_-_satiniert"]}
           />
           <mesh
             geometry={nodes.ATR_7.geometry}
@@ -94,7 +94,7 @@ function ATR_Model(props) {
           />
           <mesh
             geometry={nodes.ATR_13.geometry}
-            material={materials["Farbe_-_Emaille_glänzend_(Dunkelgrau)"]}
+            material={materials["Pulverbeschichtung_(Dunkelgrau)"]}
           />
           <mesh
             geometry={nodes.ATR_14.geometry}
@@ -107,7 +107,7 @@ function ATR_Model(props) {
           />
           <mesh
             geometry={nodes.ATR_17.geometry}
-            material={materials["Aluminium_-_poliert"]}
+            material={materials["Aluminium_-_satiniert"]}
           />
           <mesh
             geometry={nodes.ATR_18.geometry}
@@ -127,7 +127,7 @@ function ATR_Model(props) {
           />
           <mesh
             geometry={nodes.ATR_22.geometry}
-            material={materials["Kunststoff_-_matt_(Rot)"]}
+            material={materials["Pulverbeschichtung_(Rot)"]}
           />
           <mesh
             geometry={nodes.ATR_23.geometry}
@@ -135,7 +135,7 @@ function ATR_Model(props) {
           />
           <mesh
             geometry={nodes.ATR_24.geometry}
-            material={materials["Pulverbeschichtung_(Gelb)"]}
+            material={materials["Kunststoff_-_glänzend_(Gelb)"]}
           />
           <mesh
             geometry={nodes.ATR_25.geometry}

@@ -31,6 +31,7 @@ import langs from "./cv/languages.png";
 import neuralnet from "./cv/neuralnet.png";
 import headset from "./cv/headset.png";
 import biceps from "./cv/biceps.png";
+import selfie from "./selfie.png";
 
 export {
   logoarrow,
@@ -62,4 +63,5 @@ export {
   neuralnet,
   headset,
   biceps,
+  selfie,
 };
