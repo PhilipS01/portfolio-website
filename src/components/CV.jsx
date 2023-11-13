@@ -9,17 +9,43 @@ import { SectionWrapper } from "../hoc/";
 import { textVariant } from "../utils/motion";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { cv } from "../constants";
-import { cpp } from "../assets";
 
-const CVCard = ({ date, item_title, description }) => (
+const CVCard = ({ date, item_title, description, icon, iconBg, v2 }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: "#1d1d1d", color: "#fff" }}
-    contentArrowStyle={{ borderRight: "7px solid #232631" }}
+    contentStyle={{ background: "#1B3536", color: "#fff" }}
+    contentArrowStyle={{ borderRight: "7px solid #bcbcbc" }}
     date={date}
-    iconStyle={{ backgroundColor: "fff" }}
+    iconStyle={{ backgroundColor: iconBg }}
+    icon={
+      <div className="flex justify-center items-center w-full h-full">
+        {icon != null && (
+          <img
+            src={icon}
+            alt={item_title}
+            className="w-[70%] h-[70%] object-contain"
+          />
+        )}
+      </div>
+    }
   >
     <div>
-      <h3 className="text-white">{item_title}</h3>
+      {!v2 && (
+        <h3
+          className={`${styles.ProjectCardFeaturesText} font-bold tracking-tight`}
+        >
+          {item_title}
+        </h3>
+      )}
+      <ul className={`${v2 ? "" : "mt-5"} list-disc ml-5 space-y-2`}>
+        {description.map((line, index) => (
+          <li
+            key={`cv-vtl-point-${item_title}-${index}`}
+            className={`${styles.subText} pl-1 tracking-tight`}
+          >
+            {line}
+          </li>
+        ))}
+      </ul>
     </div>
   </VerticalTimelineElement>
 );
@@ -44,13 +70,42 @@ const CV = () => {
 
         <div className="mt-20 flex flex-col gap-10">
           {cv.map((group, index) => {
-            if (group.title != "KENNTNISSE UND INTERESSEN") {
+            if (group.title != "Kenntnisse und Interessen") {
               return (
-                <VerticalTimeline index={index}>
-                  {group.items.map((items, index) => (
-                    <CVCard key={group.title} index={index} {...items} />
-                  ))}
-                </VerticalTimeline>
+                <div>
+                  <h1 className="text-white/60 sm:text-[20px] text-[14px] text-left mb-5">
+                    {group.title}
+                  </h1>
+                  <VerticalTimeline index={index} layout="1-column-left">
+                    {group.items.map((items, index) => (
+                      <CVCard
+                        key={`cv-vtl-group-${group.title}-${index}`}
+                        index={index}
+                        {...items}
+                        v2={false}
+                      />
+                    ))}
+                  </VerticalTimeline>
+                </div>
+              );
+            } else {
+              // Kenntnisse und Interessen Abschnitt
+              return (
+                <div>
+                  <h1 className="text-white/60 sm:text-[20px] text-[14px] text-left mb-5">
+                    {group.title}
+                  </h1>
+                  <VerticalTimeline index={index} layout="1-column-left">
+                    {group.items.map((items, index) => (
+                      <CVCard
+                        key={`cv-vtl-group-${group.title}-${index}`}
+                        index={index}
+                        {...items}
+                        v2={true}
+                      />
+                    ))}
+                  </VerticalTimeline>
+                </div>
               );
             }
           })}

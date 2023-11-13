@@ -26,18 +26,17 @@ import python from "./tech/python.png";
 import threed_printing from "./tech/3d_printing_2.png";
 import electronics from "./tech/electronics.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
-
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
-
 import arrownext from "./arrow_next.svg";
 import greeter_screenshot from "./greeter_screenshot.png";
 import greeter_screenshot2 from "./greeter_screenshot2.png";
+
+import rsschmalkalden from "./cv/rss.png";
+import bbzsm from "./cv/bbzsm.png";
+import tuda from "./cv/tuda.png";
+import lrasm from "./cv/lra-sm.jpg";
+import langs from "./cv/languages.png";
+import neuralnet from "./cv/neuralnet.png";
+import headset from "./cv/headset.png";
 
 export {
   logoarrow,
@@ -61,13 +60,6 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
-  jobit,
-  tripguide,
   arrownext,
   cpp,
   fusion360,
@@ -76,4 +68,11 @@ export {
   electronics,
   greeter_screenshot,
   greeter_screenshot2,
+  rsschmalkalden,
+  bbzsm,
+  tuda,
+  lrasm,
+  langs,
+  neuralnet,
+  headset,
 };

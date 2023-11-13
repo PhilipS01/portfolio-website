@@ -60,7 +60,7 @@ const ProjectCard = ({
       >
         <div
           options={{ max: 45, scale: 1, speed: 450 }}
-          className="bg-[#101010] rounded-[20px] py-6 px-12 flex items-center flex-col h-fit"
+          className="bg-background_dark rounded-[20px] py-6 px-12 flex items-center flex-col h-fit"
         >
           {isMobile == false && (
             <table className="table-fixed w-full h-full">
@@ -111,7 +111,7 @@ const ProjectCard = ({
                         return (
                           <div className="text-right mt-[1em] border-separate border-r pr-4 border-slate-500">
                             <div
-                              key={tag.name + "-" + index}
+                              key={`feature-${tag.name}-${index}`}
                               className={`${styles.ProjectCardFeaturesText} text-slate-200 font-bold tracking-tight`}
                             >
                               {tag.name}
@@ -129,13 +129,17 @@ const ProjectCard = ({
                 </tr>
                 <tr>
                   <td className="w-[400px]">
-                    <div className="flex flex-row w-[400px]">
+                    <div className="flex flex-row w-[400px] mt-3">
                       {tools.map((tool, index) => (
-                        <ToolCrest key={tool.name} index={index} {...tool} />
+                        <ToolCrest
+                          key={`tool-${title}-${tool.name}-${index}`}
+                          index={index}
+                          {...tool}
+                        />
                       ))}
                     </div>
                   </td>
-                  <td className="float-right mt-[3em]">
+                  <td className="float-right mt-[3.5em]">
                     <a
                       href={`/projects/${link}`}
                       className="text-slate-500 hover:text-slate-300 transition-all"
@@ -200,7 +204,7 @@ const ProjectCard = ({
                         return (
                           <div className="mt-[1em]">
                             <div
-                              key={tag.name + "-" + index}
+                              key={`feature-${tag.name}-${index}-mobile`}
                               className={`${styles.ProjectCardFeaturesText} text-slate-200 font-bold tracking-tight`}
                             >
                               {tag.name}
@@ -220,7 +224,7 @@ const ProjectCard = ({
                   <div className="flex flex-row justify-center">
                     {tools.map((tool, index) => (
                       <ToolCrest
-                        key={tool.name}
+                        key={`tool-${title}-${tool.name}-${index}-mobile`}
                         index={index}
                         isMobile={isMobile}
                         {...tool}
@@ -298,7 +302,7 @@ const Works = () => {
         <div className="mt-20 flex flex-col gap-10 mx-auto justify-evenly items-center">
           {projects.map((project, index) => (
             <ProjectCard
-              key={project.title}
+              key={`projectcard-${project.title}-${index}`}
               index={index}
               {...project}
               isMobile={isMobile}

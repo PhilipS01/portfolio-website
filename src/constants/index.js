@@ -16,18 +16,18 @@ import {
   figma,
   docker,
   cpp,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
   fusion360,
   python,
   threed_printing,
   electronics,
+  rsschmalkalden,
+  bbzsm,
+  tuda,
+  lrasm,
+  langs,
+  neuralnet,
+  headset,
 } from "../assets";
 //import Matrs_Model from "../components/canvas/Matrs_blacknwhite";
 import Matrs_Model from "../components/canvas/Turret_new";
@@ -278,78 +278,88 @@ const projects = [
 
 const cv = [
   {
-    title: "AKADEMISCHE LAUFBAHN",
+    title: "Akademische Laufbahn",
     items: [
       {
         date: "Seit Oktober 2023",
         item_title: "TU-Darmstadt",
-        description:
+        description: [
           "Studium im B.Sc. Mechatronik\nFachbereich Elektro- und Informationstechnik",
+        ],
+        icon: tuda,
+        iconBg: "#fff",
       },
       {
         date: "Juni 2023",
         item_title: "Berufsbildungszentrum Schmalkalden",
-        description:
-          "Allgemeine Hochschulreife mit ∅ 1,9\nFachrichtung Technik\nSchwerpunkt Daten- und Informationstechnik",
+        description: [
+          "Allgemeine Hochschulreife mit ∅1,9",
+          "Fachrichtung Technik\nSchwerpunkt Daten- und Informationstechnik",
+        ],
+        icon: bbzsm,
+        iconBg: "#e7e8e2",
       },
       {
         date: "Juni 2019",
         item_title: "Staatliche Regelschule Schmalkalden",
-        description: "Mittlere Reife mit ∅ 1,1",
+        description: ["Mittlere Reife mit ∅1,1"],
+        icon: rsschmalkalden,
+        iconBg: "#e7e8e2",
       },
     ],
   },
   {
-    title: "BERUFSERFAHRUNG",
+    title: "Berufserfahrung",
     items: [
       {
         date: "Januar - Juli 2022",
         item_title: "Landratsamt Schmalkalden Meiningen",
-        description:
+        description: [
           "Kommunaler IT-Service\nAufgaben: Interne Knowledgebase Entwicklung,\nIT-Außendienst an Schulen des Landkreises",
+        ],
+        icon: lrasm,
+        iconBg: "#fff",
       },
       {
         date: "2018 - 2019",
         item_title: "Diverse Berufspraktika der Realschule",
-        description: "IT-Systemkaufmann, Versicherungskaufmann",
+        description: ["IT-Systemkaufmann, Versicherungskaufmann"],
+        icon: rsschmalkalden,
+        iconBg: "#e7e8e2",
       },
     ],
   },
   {
-    title: "KENNTNISSE UND INTERESSEN",
+    title: "Kenntnisse und Interessen",
     items: [
       {
-        category: "Technik & IT",
-        subitems: [
-          {
-            item_title: "Programmiersprachen",
-            description: "C++, C#, Python, JS, HTML, CSS",
-          },
-          {
-            item_title: "Design & Prototyping",
-            description:
-              "Fusion360, Cura, PlatformIO, Figma, Blender,\nGIMP, Kdenlive",
-          },
-          {
-            item_title: "Betriebssysteme & Open Source Mindset",
-            description: "Linux (Arch, Ubuntu, Debian), Git",
-          },
+        date: "Technik & IT",
+        description: [
+          "C++, C#, Python, JS, HTML, CSS",
+          "Fusion360, Cura, PlatformIO, Figma, Blender,\nGIMP, Kdenlive",
+          "Linux (Arch, Ubuntu, Debian), Git",
         ],
+        icon: neuralnet,
+        iconBg: "#e7e8e2",
       },
       {
-        category: "Hobbies",
-        subitems: [
-          { description: "3D-Druck, Mikroelektronik" },
-          { description: "Gewichtheben, Joggen, Lesen" },
+        date: "Hobbies",
+        description: [
+          "3D-Druck, Mikroelektronik",
+          "Gewichtheben, Joggen, Lesen",
         ],
+        icon: headset,
+        iconBg: "#e7e8e2",
       },
       {
-        category: "Fremdsprachen",
-        subitems: [
-          { description: "Deutsch (Muttersprache)" },
-          { description: "Englisch (fließend)" },
-          { description: "Französisch (Grundkrenntnisse)" },
+        date: "Fremdsprachen",
+        description: [
+          "Deutsch (Muttersprache)",
+          "Englisch (fließend)",
+          "Französisch (Grundkrenntnisse)",
         ],
+        icon: langs,
+        iconBg: "#e7e8e2",
       },
     ],
   },

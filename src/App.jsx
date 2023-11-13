@@ -7,7 +7,7 @@ export const sm_windowWidth = 1200;
 function App() {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary text-black">
+      <div className="relative z-0 bg-retro_secondary text-black">
         <Navbar />
         <Hero />
         <Works />
