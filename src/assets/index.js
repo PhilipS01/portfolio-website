@@ -37,6 +37,7 @@ import lrasm from "./cv/lra-sm.jpg";
 import langs from "./cv/languages.png";
 import neuralnet from "./cv/neuralnet.png";
 import headset from "./cv/headset.png";
+import biceps from "./cv/biceps.png";
 
 export {
   logoarrow,
@@ -75,4 +76,5 @@ export {
   langs,
   neuralnet,
   headset,
+  biceps,
 };

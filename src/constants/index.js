@@ -28,6 +28,7 @@ import {
   langs,
   neuralnet,
   headset,
+  biceps,
 } from "../assets";
 //import Matrs_Model from "../components/canvas/Matrs_blacknwhite";
 import Matrs_Model from "../components/canvas/Turret_new";
@@ -307,6 +308,7 @@ const cv = [
         iconBg: "#e7e8e2",
       },
     ],
+    bgColor: "#458587",
   },
   {
     title: "Berufserfahrung",
@@ -328,6 +330,7 @@ const cv = [
         iconBg: "#e7e8e2",
       },
     ],
+    bgColor: "#1B3536",
   },
   {
     title: "Kenntnisse und Interessen",
@@ -340,7 +343,7 @@ const cv = [
           "Linux (Arch, Ubuntu, Debian), Git",
         ],
         icon: neuralnet,
-        iconBg: "#e7e8e2",
+        iconBg: "#e9dab1",
       },
       {
         date: "Hobbies",
@@ -348,8 +351,8 @@ const cv = [
           "3D-Druck, Mikroelektronik",
           "Gewichtheben, Joggen, Lesen",
         ],
-        icon: headset,
-        iconBg: "#e7e8e2",
+        icon: biceps,
+        iconBg: "#7E9DFF",
       },
       {
         date: "Fremdsprachen",
@@ -359,9 +362,10 @@ const cv = [
           "Französisch (Grundkrenntnisse)",
         ],
         icon: langs,
-        iconBg: "#e7e8e2",
+        iconBg: "#539ec5",
       },
     ],
+    bgColor: "#458587",
   },
 ];
 

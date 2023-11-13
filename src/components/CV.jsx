@@ -10,9 +10,21 @@ import { textVariant } from "../utils/motion";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { cv } from "../constants";
 
-const CVCard = ({ date, item_title, description, icon, iconBg, v2 }) => (
+const CVCard = ({
+  date,
+  item_title,
+  description,
+  icon,
+  iconBg,
+  v2,
+  bgColor,
+}) => (
   <VerticalTimelineElement
-    contentStyle={{ background: "#1B3536", color: "#fff" }}
+    contentStyle={{
+      background: "#000",
+      color: "#fff",
+      backgroundImage: `linear-gradient(to bottom right, ${bgColor}, #232c2e)`,
+    }}
     contentArrowStyle={{ borderRight: "7px solid #bcbcbc" }}
     date={date}
     iconStyle={{ backgroundColor: iconBg }}
@@ -83,6 +95,7 @@ const CV = () => {
                         index={index}
                         {...items}
                         v2={false}
+                        bgColor={group.bgColor}
                       />
                     ))}
                   </VerticalTimeline>
@@ -102,6 +115,7 @@ const CV = () => {
                         index={index}
                         {...items}
                         v2={true}
+                        bgColor={group.bgColor}
                       />
                     ))}
                   </VerticalTimeline>
