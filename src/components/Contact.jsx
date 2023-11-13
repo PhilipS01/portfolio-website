@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <div className="xl:flex-row flex-col-reverse flex gap-10 overflow-hidden w-full">
       <motion.div
-        variants={slideIn("left", 0.2, 0.3)}
+        variants={slideIn("left", "spring", 0.2, 0.5)}
         className="bg-background_dark rounded-[20px] p-8 w-full"
       >
         <p className={`${styles.subText} text-slate-500`}>Melden Sie sich</p>
@@ -49,6 +49,7 @@ const Contact = () => {
           </a>
           <a
             href="https://gitlab.com/PhilipS01"
+            target="_blank"
             className="cursor-pointer hover:font-medium"
           >
             <span className="flex align-middle leading-7">
