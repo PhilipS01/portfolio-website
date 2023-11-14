@@ -227,3 +227,14 @@
 		transform: translatey(0px);
 	}
 }
+
+.navHighlight {
+	text-decoration: none;
+	background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
+	transition: 0.5s background-size;
+  background-position: left bottom;
+}
+
+.navHighlight:hover {
+	background-size: 100% .1em;
+}

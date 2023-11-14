@@ -1,6 +1,5 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { styles } from "../styles";
-import { MainCanvas } from "./canvas";
 import { Reveal, DoubleSlideReveal } from "./util/Reveal";
 import { ChangeHeroSub } from "./util/ChangeHeroSub";
 import { motion, useScroll, useTransform } from "framer-motion";

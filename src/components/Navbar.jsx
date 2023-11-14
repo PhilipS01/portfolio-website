@@ -7,18 +7,30 @@ import { menu, close } from "../assets";
 import { InitialsExpander } from "./util/ExpandInitials";
 
 const Navbar = (scrolling) => {
-  useEffect(() => {
+  const [colorChange, setcolorChange] = useState(false);
+
+  function logit() {
     const heroMotionSection = document.getElementById("heroMotionSection");
     if (
       window
         .getComputedStyle(heroMotionSection, null)
         .getPropertyValue("background-color") == "rgb(24, 24, 24)"
     ) {
-      console.log("HAHHAAH");
+      setcolorChange(true);
     } else {
-      console.log("nooo ...");
+      setcolorChange(false);
     }
-  }, [window.onscrollend]);
+  }
+
+  useEffect(() => {
+    function watchScroll() {
+      window.addEventListener("scroll", logit);
+    }
+    watchScroll();
+    return () => {
+      window.removeEventListener("scroll", logit);
+    };
+  });
 
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -39,7 +51,11 @@ const Navbar = (scrolling) => {
             window.location.href = window.location.href;
           }}
         >
-          <span className="m-[-10px] text-[18px] font-medium flex h-6">
+          <span
+            className={`${
+              colorChange ? "text-slate-200" : "text-retro_text_dark"
+            } m-[-10px] text-[18px] font-medium flex h-6`}
+          >
             <InitialsExpander>Philip&nbsp;Simon</InitialsExpander>
           </span>
         </Link>
@@ -49,10 +65,10 @@ const Navbar = (scrolling) => {
               key={link.id}
               id={link.id}
               className={`${
-                active === link.title
-                  ? "text-black"
-                  : "text-retro_text_inactive"
-              } hover:text-retro_secondary text-[18px] font-medium cursor-pointer ease-in-out duration-300`}
+                active === link.title ? "font-bold" : "font-medium"
+              } ${
+                colorChange ? "text-white" : "text-retro_text_dark"
+              } text-[18px] cursor-pointer navHighlight`}
               onClick={() => setActive(link.title)}
             >
               <a href={`#${link.link}`}>{link.title}</a>
@@ -64,20 +80,26 @@ const Navbar = (scrolling) => {
           <img
             src={toggle ? close : menu}
             alt={menu}
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
+            className={`${
+              colorChange ? "" : "invert"
+            } opacity-90 w-[28px] h-[28px] object-contain cursor-pointer`}
             onClick={() => setToggle(!toggle)}
           />
 
           <div
             className={`transition-opacity duration-500 ease-in-out ${
               !toggle ? "opacity-0" : "opacity-100"
-            } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-gradient-to-br from-neutral-700 to-neutral-900 sidebar drop-shadow-lg`}
+            } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-gradient-to-br ${
+              colorChange
+                ? "from-neutral-700 to-neutral-900 text-white"
+                : "from-[#efe5c8] to-[#e9dab1] text-retro_text_dark"
+            } sidebar drop-shadow-lg`}
           >
             <ul className="list-none flex flex-row gap-10">
               {navLinks.map((link) => (
                 <li
                   key={link.id}
-                  className="text-white text-[16px] font-medium cursor-pointer ease-in-out duration-300"
+                  className="text-[16px] font-medium cursor-pointer ease-in-out duration-300"
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(link.title);
