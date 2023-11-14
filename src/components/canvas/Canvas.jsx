@@ -1,13 +1,5 @@
-import { Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import {
-  OrbitControls,
-  Preload,
-  ScrollControls,
-  Environment,
-  ContactShadows,
-} from "@react-three/drei";
-import CanvasLoader from "../Loader";
+import { OrbitControls, Preload, Environment } from "@react-three/drei";
 
 const MainCanvas = ({ model }) => {
   return (

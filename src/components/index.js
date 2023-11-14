@@ -4,6 +4,5 @@ import Navbar from "./Navbar";
 import CV from "./CV";
 import Work from "./Work";
 import Contact from "./Contact";
-import CanvasLoader from "./Loader";
 
-export { Hero, Navbar, CV, Work, Contact, MainCanvas, CanvasLoader };
+export { Hero, Navbar, CV, Work, Contact, MainCanvas };
