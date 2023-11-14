@@ -1,8 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-
 import { CV, Contact, Hero, Navbar, Work } from "./components";
-
-export const sm_windowWidth = 1200;
 
 function App() {
   return (

@@ -222,13 +222,6 @@ const cv = [
         icon: lrasm,
         iconBg: "#fff",
       },
-      {
-        date: "2018 - 2019",
-        item_title: "Diverse Berufspraktika der Realschule",
-        description: ["IT-Systemkaufmann, Versicherungskaufmann"],
-        icon: rsschmalkalden,
-        iconBg: "#e7e8e2",
-      },
     ],
     bgColor: "#34d399",
     bgColor2: "#16a34a",

@@ -69,7 +69,7 @@ const fadeInVariants = {
 
 const CV = () => {
   return (
-    <section className="bg-retro_secondary pb-14">
+    <section className="bg-retro_secondary pb-8">
       <GlowCapture>
         <div>
           <motion.div

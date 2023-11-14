@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import { useRef } from "react";
 import { styles } from "../styles";
 import { MainCanvas } from "./canvas";
 import { Reveal, DoubleSlideReveal } from "./util/Reveal";
@@ -41,6 +41,7 @@ const Hero = () => {
           backgroundColor,
         }}
         ref={targetRef}
+        id="heroMotionSection"
       >
         <motion.div
           className="flex flex-col top-[35vh] text-center sticky"

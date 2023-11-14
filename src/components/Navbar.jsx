@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
@@ -6,7 +6,20 @@ import { navLinks } from "../constants";
 import { menu, close } from "../assets";
 import { InitialsExpander } from "./util/ExpandInitials";
 
-const Navbar = () => {
+const Navbar = (scrolling) => {
+  useEffect(() => {
+    const heroMotionSection = document.getElementById("heroMotionSection");
+    if (
+      window
+        .getComputedStyle(heroMotionSection, null)
+        .getPropertyValue("background-color") == "rgb(24, 24, 24)"
+    ) {
+      console.log("HAHHAAH");
+    } else {
+      console.log("nooo ...");
+    }
+  }, [scrolling]);
+
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
@@ -51,20 +64,20 @@ const Navbar = () => {
           <img
             src={toggle ? close : menu}
             alt={menu}
-            className="w-[28px] h-[28px] object-contain cursor-pointer invert"
+            className="w-[28px] h-[28px] object-contain cursor-pointer"
             onClick={() => setToggle(!toggle)}
           />
 
           <div
             className={`transition-opacity duration-500 ease-in-out ${
               !toggle ? "opacity-0" : "opacity-100"
-            } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl drop-shadow-md bg-[rgb(255,255,255,0.15)] backdrop-blur-md`}
+            } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-gradient-to-br from-neutral-700 to-neutral-900 sidebar drop-shadow-lg`}
           >
             <ul className="list-none flex flex-row gap-10">
               {navLinks.map((link) => (
                 <li
                   key={link.id}
-                  className="hover:text-retro_secondary text-[16px] font-medium cursor-pointer ease-in-out duration-300"
+                  className="text-white text-[16px] font-medium cursor-pointer ease-in-out duration-300"
                   onClick={() => {
                     setToggle(!toggle);
                     setActive(link.title);
