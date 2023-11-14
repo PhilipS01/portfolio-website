@@ -6,10 +6,10 @@ import { navLinks } from "../constants";
 import { menu, close } from "../assets";
 import { InitialsExpander } from "./util/ExpandInitials";
 
-const Navbar = (scrolling) => {
+const Navbar = () => {
   const [colorChange, setcolorChange] = useState(false);
 
-  function logit() {
+  function checkBgColor() {
     const heroMotionSection = document.getElementById("heroMotionSection");
     if (
       window
@@ -24,11 +24,11 @@ const Navbar = (scrolling) => {
 
   useEffect(() => {
     function watchScroll() {
-      window.addEventListener("scroll", logit);
+      window.addEventListener("scroll", checkBgColor);
     }
     watchScroll();
     return () => {
-      window.removeEventListener("scroll", logit);
+      window.removeEventListener("scroll", checkBgColor);
     };
   });
 
