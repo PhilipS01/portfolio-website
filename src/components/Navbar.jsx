@@ -18,7 +18,7 @@ const Navbar = (scrolling) => {
     } else {
       console.log("nooo ...");
     }
-  }, [scrolling]);
+  }, [window.onscrollend]);
 
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);

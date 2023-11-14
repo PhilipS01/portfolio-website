@@ -80,7 +80,7 @@ const CV = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.5, duration: 0.75 }}
           >
-            <Glow color="#0ea5e9">
+            <Glow color="#3eb7ed">
               <h1 className={`${styles.sectionHeadText} glow:text-glow/50`}>
                 curriculum vitae
               </h1>

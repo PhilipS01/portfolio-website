@@ -288,7 +288,7 @@ const Work = () => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ delay: 0.5, duration: 0.75 }}
           >
-            <Glow color="#16a34a">
+            <Glow color="#80e7a6">
               <h1 className={`${styles.sectionHeadText} glow:text-glow/50`}>
                 Projekte
               </h1>

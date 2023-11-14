@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
@@ -14,31 +14,8 @@ const Contact = () => {
   const handleChange = (e) => {};
   const handleSubmit = (e) => {};
 
-  // mobile
-  const [isMobile, setisMobile] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-
-    setisMobile(mediaQuery.matches);
-
-    const handleMediaQueryChange = (event) => {
-      setisMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
-
   return (
-    <div
-      className={`${
-        isMobile ? "text-center" : ""
-      } xl:flex-row flex-col-reverse flex overflow-hidden w-full`}
-    >
+    <div className="text-center md:text-left xl:flex-row flex-col-reverse flex overflow-hidden w-full">
       <motion.div
         variants={zoomIn(0, 0.5)}
         className="bg-no-repeat bg-center bg-[url('/src/assets/layered-waves.svg')] bg-cover	 rounded-[20px] p-8 w-[100%] overflow-hidden"
@@ -46,26 +23,18 @@ const Contact = () => {
         <div>
           <img
             src={selfie}
-            className={`${
-              isMobile
-                ? "relative mb-8 mx-auto"
-                : "absolute top-[120px] right-[120px]"
-            } h-[200px]`}
+            className="relative mb-8 mx-auto md:absolute md:top-[120px] md:right-[120px] h-[200px]"
           />
           <p className={`${styles.subText} text-slate-300`}>Melden Sie sich</p>
           <h3 className={styles.sectionHeadText}>Kontakt</h3>
 
           <p
-            className={`${
-              isMobile ? "flex-wrap w-full justify-center" : ""
-            } text-white mt-4 flex gap-5`}
+            className="
+            flex-wrap w-full justify-center md:w-fit
+            text-white mt-4 flex gap-5"
           >
             <a
-              className={`${
-                isMobile
-                  ? ""
-                  : "shadow-md px-2 rounded-xl py-1 hover:scale-110 transition-all"
-              } cursor-pointer `}
+              className="md:shadow-md md:px-2 md:rounded-xl md:py-1 md:hover:scale-110 md:transition-all cursor-pointer"
               onClick={() => {
                 navigator.clipboard.writeText("philip.si@pm.me");
 
@@ -81,11 +50,7 @@ const Contact = () => {
             </a>
             <a
               href="tel:+4915146170784"
-              className={`${
-                isMobile
-                  ? ""
-                  : "shadow-md px-2 rounded-xl py-1 hover:scale-110 transition-all"
-              } cursor-pointer `}
+              className="md:shadow-md md:px-2 md:rounded-xl md:py-1 md:hover:scale-110 md:transition-all cursor-pointer"
             >
               <span className="flex align-middle leading-7">
                 <span className="mr-1">☎️</span>Telefon
@@ -94,11 +59,7 @@ const Contact = () => {
             <a
               href="https://gitlab.com/PhilipS01"
               target="_blank"
-              className={`${
-                isMobile
-                  ? ""
-                  : "shadow-md px-2 rounded-xl py-1 hover:scale-110 transition-all"
-              } cursor-pointer `}
+              className="md:shadow-md md:px-2 md:rounded-xl md:py-1 md:hover:scale-110 md:transition-all cursor-pointer"
             >
               <span className="flex align-middle leading-7">
                 <img src={git} className="h-[25px] mr-1" />
@@ -110,11 +71,9 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className={`${styles.subText} ${
-              isMobile ? "items-center" : ""
-            } mt-10 flex flex-col gap-8`}
+            className={`${styles.subText} items-center md:items-start w-full mt-10 flex flex-col gap-8`}
           >
-            <label className="flex flex-col">
+            <label className="flex flex-col w-full">
               <span className="text-white font-medium mb-4">Ihr Name</span>
               <input
                 type="text"
@@ -125,7 +84,7 @@ const Contact = () => {
                 className="bg-retro_secondary/80 py-4 px-6 placeholder:text-white/10 text-white rounded-lg outlined-none border-none font-medium"
               />
             </label>
-            <label className="flex flex-col">
+            <label className="flex flex-col w-full">
               <span className="text-white font-medium mb-4">Ihre Email</span>
               <input
                 type="email"
@@ -136,7 +95,7 @@ const Contact = () => {
                 className="bg-retro_secondary/80 py-4 px-6 placeholder:text-white/10 text-white rounded-lg outlined-none border-none font-medium"
               />
             </label>
-            <label className="flex flex-col">
+            <label className="flex flex-col w-full">
               <span className="text-white font-medium mb-4">
                 Ihre Nachricht
               </span>
