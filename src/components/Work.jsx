@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { styles } from "../styles";
 import { motion, useAnimation } from "framer-motion";
 import Tilt from "react-parallax-tilt";
@@ -8,8 +8,61 @@ import { SectionWrapper } from "../hoc";
 import { GlowCapture, Glow } from "@codaworks/react-glow";
 import { MainCanvas } from "./canvas";
 import { greeter_screenshot2, github } from "../assets";
+import useHover from "@react-hook/hover";
 
-export const ToolCrest = ({ index, name, icon, isMobile }) => {
+const GithubExpander = (git_link) => {
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+  const mainControls = useAnimation();
+  const isHovering = useHover(ref);
+  const isHovering2 = useHover(ref2);
+
+  useEffect(() => {
+    if (isHovering) {
+      mainControls.start("visible");
+    } else {
+      if (!isHovering2) {
+        mainControls.start("hidden");
+      } else {
+        mainControls.start("visible");
+      }
+    }
+  }, [isHovering, isHovering2]);
+
+  return (
+    <div>
+      <motion.div animate={mainControls} initial="hidden" className="flex">
+        <motion.span
+          variants={{
+            hidden: {
+              opacity: 0,
+              x: 75,
+              transition: { delay: 0.5 },
+            },
+            visible: {
+              opacity: 1,
+              x: 0,
+            },
+          }}
+          initial="hidden"
+          animate={mainControls}
+          className="right-[80px] text-white px-4 pt-[0.5em] mr-4 border-solid border-2 border-white/50 rounded-xl hover:border-white/0 transition-colors cursor-pointer hover:bg-white hover:text-background_dark"
+          ref={ref2}
+        >
+          Zum Artikel 🗎
+        </motion.span>
+        <a ref={ref} href={git_link} target="_blank">
+          <img
+            src={github}
+            className="h-[40px] object-contain opacity-60 hover:opacity-100 hover:scale-110 transition-all cursor-pointer"
+          />
+        </a>
+      </motion.div>
+    </div>
+  );
+};
+
+const ToolCrest = ({ index, name, icon, isMobile }) => {
   return (
     <motion.div variants={fadeIn("right", "spring", 1.5 + 0.25 * index, 0.5)}>
       <Tilt
@@ -141,12 +194,7 @@ const ProjectCard = ({
                     </div>
                   </td>
                   <td className="float-right mt-[3em]">
-                    <a href={git_link} target="_blank">
-                      <img
-                        src={github}
-                        className="h-[40px] object-contain opacity-60 hover:opacity-100 hover:scale-110 transition-all cursor-pointer"
-                      />
-                    </a>
+                    <GithubExpander git_link={git_link} />
                   </td>
                 </tr>
               </tbody>

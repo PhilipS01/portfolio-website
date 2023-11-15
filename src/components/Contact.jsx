@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
@@ -9,10 +9,41 @@ import { selfie, git } from "../assets";
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState("false");
 
-  const handleChange = (e) => {};
-  const handleSubmit = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading("true");
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE,
+        process.env.REACT_APP_EMAILJS_TEMPLATE,
+        {
+          form_name: form.name,
+          to_name: "Philip",
+          from_email: form.email,
+          to_email: "philip.si@protonmail.com",
+          message: form.message,
+        },
+        process.env.REACT_APP_ENAILJS_PUBLICKEY
+      )
+      .then(
+        () => {
+          setLoading("sent");
+
+          setForm({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          setLoading("false");
+          console.log(error);
+          alert("Etwas ist beim Senden der Nachricht schiefgelaufen. ;(");
+        }
+      );
+  };
 
   return (
     <div className="text-center md:text-left xl:flex-row flex-col-reverse flex overflow-hidden w-full">
@@ -110,7 +141,11 @@ const Contact = () => {
               type="submit"
               className="text-white bg-retro_secondary hover:bg-blue-500 py-3 px-8 outline-none md:w-fit w-full font-bold shadow-lg hover:shadow-blue-500/50 rounded-lg transition-all"
             >
-              {loading ? "Wird gesendet ..." : "Senden"}
+              {loading === "true"
+                ? "Wird gesendet ..."
+                : loading === "sent"
+                ? "Gesendet!"
+                : "Senden"}
             </button>
           </form>
         </div>
