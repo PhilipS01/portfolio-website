@@ -95,7 +95,7 @@ const projects = [
   },
   {
     title: "Getriebe Prüfstand",
-    description: "Leistungserfassung zylindrischer Getrieben",
+    description: "Leistungserfassung zylindrischer Getriebe",
     model: ATR_Model,
     link: "pruefstand",
     features: [
@@ -126,7 +126,7 @@ const projects = [
         icon: python,
       },
     ],
-    git_link: "https://github.com/",
+    git_link: "https://gitlab.com/PhilipS01/adaptable-testing-rig",
   },
   {
     title: "Greeter",
@@ -172,7 +172,7 @@ const projects = [
         icon: javascript,
       },
     ],
-    git_link: "https://github.com/",
+    git_link: "https://gitlab.com/PhilipS01/greeter",
   },
 ];
 

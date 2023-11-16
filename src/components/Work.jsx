@@ -10,7 +10,7 @@ import { MainCanvas } from "./canvas";
 import { greeter_screenshot2, github } from "../assets";
 import useHover from "@react-hook/hover";
 
-const GithubExpander = (git_link) => {
+const GithubExpander = ({ git_link }) => {
   const ref = useRef(null);
   const ref2 = useRef(null);
   const mainControls = useAnimation();
@@ -36,7 +36,7 @@ const GithubExpander = (git_link) => {
           variants={{
             hidden: {
               opacity: 0,
-              x: 75,
+              x: 15,
               transition: { delay: 0.5 },
             },
             visible: {

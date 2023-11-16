@@ -20,16 +20,16 @@ const Contact = () => {
     setLoading("true");
     emailjs
       .send(
-        process.env.REACT_APP_EMAILJS_SERVICE,
-        process.env.REACT_APP_EMAILJS_TEMPLATE,
+        import.meta.env.VITE_EMAILJS_SERVICE,
+        import.meta.env.VITE_EMAILJS_TEMPLATE,
         {
-          form_name: form.name,
+          from_name: form.name,
           to_name: "Philip",
           from_email: form.email,
           to_email: "philip.si@protonmail.com",
           message: form.message,
         },
-        process.env.REACT_APP_ENAILJS_PUBLICKEY
+        import.meta.env.VITE_ENAILJS_PUBLICKEY
       )
       .then(
         () => {
