@@ -6,7 +6,7 @@ import { navLinks } from "../constants";
 import { menu, close } from "../assets";
 import { InitialsExpander } from "./util/ExpandInitials";
 
-const Navbar = () => {
+const Navbar = ({ isHome }) => {
   const [colorChange, setcolorChange] = useState(false);
 
   function checkBgColor() {
@@ -53,7 +53,7 @@ const Navbar = () => {
         >
           <span
             className={`${
-              colorChange ? "text-slate-200" : "text-retro_text_dark"
+              colorChange || !isHome ? "text-slate-200" : "text-retro_text_dark"
             } m-[-10px] text-[18px] font-medium flex h-6`}
           >
             <InitialsExpander>Philip&nbsp;Simon</InitialsExpander>
@@ -67,7 +67,7 @@ const Navbar = () => {
               className={`${
                 active === link.title ? "font-bold" : "font-medium"
               } ${
-                colorChange ? "text-white" : "text-retro_text_dark"
+                colorChange || !isHome ? "text-white" : "text-retro_text_dark"
               } text-[18px] cursor-pointer navHighlight`}
               onClick={() => setActive(link.title)}
             >
@@ -81,7 +81,7 @@ const Navbar = () => {
             src={toggle ? close : menu}
             alt={menu}
             className={`${
-              colorChange ? "" : "invert"
+              colorChange || !isHome ? "" : "invert"
             } opacity-90 w-[28px] h-[28px] object-contain cursor-pointer`}
             onClick={() => setToggle(!toggle)}
           />
@@ -90,7 +90,7 @@ const Navbar = () => {
             className={`transition-opacity duration-500 ease-in-out ${
               !toggle ? "opacity-0" : "opacity-100"
             } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-gradient-to-br ${
-              colorChange
+              colorChange || !isHome
                 ? "from-neutral-700 to-neutral-900 text-white"
                 : "from-[#efe5c8] to-[#e9dab1] text-retro_text_dark"
             } sidebar drop-shadow-lg`}
