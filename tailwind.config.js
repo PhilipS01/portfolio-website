@@ -28,7 +28,6 @@ module.exports = {
     },
   },
   plugins: [
-    require("@codaworks/react-glow/tailwind"),
     antiDrag(function ({ addUtilities }) {
       addUtilities({
         ".drag-none": {

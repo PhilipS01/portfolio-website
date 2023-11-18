@@ -50,7 +50,7 @@ const Hero = () => {
           <div id="mainHeading">
             <Reveal>
               <motion.h1
-                className={`${styles.heroHeadText} w-fit mx-auto glow:text-glow/50`}
+                className={`${styles.heroHeadText} w-fit mx-auto`}
                 id="mainHeadingH1"
                 style={{
                   color,
