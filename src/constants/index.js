@@ -22,7 +22,6 @@ import {
   headset,
   biceps,
 } from "../assets";
-//import Matrs_Model from "../components/canvas/Matrs_blacknwhite";
 import Matrs_Model from "../components/canvas/Turret_new";
 import ATR_Model from "../components/canvas/Atr";
 
