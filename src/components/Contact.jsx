@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
-import { fadeIn } from "../utils/motion";
 import { selfie, git } from "../assets";
 
 const Contact = () => {
@@ -47,7 +46,7 @@ const Contact = () => {
 
   return (
     <div className="text-center md:text-left xl:flex-row flex-col-reverse flex overflow-hidden w-full">
-      <motion.div className="bg-no-repeat bg-center bg-[url('/src/assets/layered-waves.svg')] bg-cover	 rounded-[20px] p-8 w-[100%] overflow-hidden">
+      <motion.div className="bg-no-repeat bg-center bg-[url('/src/assets/layered-waves.svg')] bg-cover rounded-[20px] p-8 w-[100%] overflow-hidden">
         <div>
           <img
             src={selfie}
