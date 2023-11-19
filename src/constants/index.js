@@ -263,4 +263,11 @@ const cv = [
   },
 ];
 
+const gallerySections = [
+  {
+    title: "MATRS",
+    images: 
+  }
+]
+
 export { projects, cv };

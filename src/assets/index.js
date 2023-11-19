@@ -33,6 +33,8 @@ import headset from "./cv/headset.png";
 import biceps from "./cv/biceps.png";
 import selfie from "./selfie.png";
 
+// gallery imports
+
 export {
   logoarrow,
   github,
