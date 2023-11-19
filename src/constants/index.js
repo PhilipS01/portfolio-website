@@ -21,6 +21,7 @@ import {
   neuralnet,
   headset,
   biceps,
+  matrsGallery,
 } from "../assets";
 import Matrs_Model from "../components/canvas/Turret_new";
 import ATR_Model from "../components/canvas/Atr";
@@ -266,8 +267,8 @@ const cv = [
 const gallerySections = [
   {
     title: "MATRS",
-    images: 
-  }
-]
+    images: matrsGallery,
+  },
+];
 
-export { projects, cv };
+export { projects, cv, gallerySections };

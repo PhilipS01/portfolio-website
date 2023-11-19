@@ -34,6 +34,14 @@ import biceps from "./cv/biceps.png";
 import selfie from "./selfie.png";
 
 // gallery imports
+import turret from "./gallery/matrs/turret.png";
+import glove from "./gallery/matrs/glove.png";
+import harmonicdrive from "./gallery/matrs/harmonicdrive.png";
+import turret2 from "./gallery/matrs/turret2.png";
+import turret3 from "./gallery/matrs/turret3.png";
+import glove2 from "./gallery/matrs/glove2.png";
+
+const matrsGallery = [turret, glove, turret3, glove2, harmonicdrive, turret2];
 
 export {
   logoarrow,
@@ -66,4 +74,5 @@ export {
   headset,
   biceps,
   selfie,
+  matrsGallery,
 };
