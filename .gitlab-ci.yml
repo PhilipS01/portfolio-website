@@ -18,4 +18,4 @@ deploy:
     - echo "$SSH_PRIVATE_KEY_HOSTINGER" >> ~/.ssh/id_dsa
     - chmod 600 ~/.ssh/id_dsa
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - rsync 'ssh -p 65002' -rav --delete dist/ u593128525@195.35.49.150:/home/u593128525/public_html/
+    - rsync -rave 'ssh -p 65002' --delete dist/ u593128525@195.35.49.150:/home/u593128525/public_html/
