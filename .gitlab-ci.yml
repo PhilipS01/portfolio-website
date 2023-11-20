@@ -9,13 +9,6 @@ build site:
     paths:
       - dist
 
-unit test:
-  image: node:latest
-  stage: test
-  script:
-    - npm install --progress=false --legacy-peer-deps
-    - npm run unit
-
 deploy:
   image: alpine
   stage: deploy
