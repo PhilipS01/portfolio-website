@@ -3,7 +3,7 @@ import { CV, Contact, Hero, Work, Navbar } from "./components";
 function Home() {
   return (
     <div>
-      <Navbar />
+      <Navbar isHome={true} />
       <Hero />
       <Work />
       <CV />

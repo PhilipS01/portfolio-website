@@ -71,7 +71,9 @@ const Navbar = ({ isHome }) => {
               } text-[18px] cursor-pointer navHighlight`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`#${link.link}`}>{link.title}</a>
+              <a href={`${link.id == "idGallery" ? "" : "#"}${link.link}`}>
+                {link.title}
+              </a>
             </li>
           ))}
         </ul>
@@ -105,7 +107,9 @@ const Navbar = ({ isHome }) => {
                     setActive(link.title);
                   }}
                 >
-                  <a href={`#${link.link}`}>{link.title}</a>
+                  <a href={`${link.id == "idGallery" ? "" : "#"}${link.link}`}>
+                    {link.title}
+                  </a>
                 </li>
               ))}
             </ul>

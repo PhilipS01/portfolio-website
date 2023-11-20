@@ -34,14 +34,37 @@ import biceps from "./cv/biceps.png";
 import selfie from "./selfie.png";
 
 // gallery imports
-import turret from "./gallery/matrs/turret.png";
-import glove from "./gallery/matrs/glove.png";
-import harmonicdrive from "./gallery/matrs/harmonicdrive.png";
-import turret2 from "./gallery/matrs/turret2.png";
-import turret3 from "./gallery/matrs/turret3.png";
-import glove2 from "./gallery/matrs/glove2.png";
+import turret from "./gallery/matrs/turret.webp";
+import glove from "./gallery/matrs/glove.webp";
+import harmonicdrive from "./gallery/matrs/harmonicdrive.webp";
+import turret2 from "./gallery/matrs/turret2.webp";
+import turret3 from "./gallery/matrs/turret3.webp";
+import glove2 from "./gallery/matrs/glove2.webp";
+import greeter1 from "./gallery/greeter/greeter1.webp";
+import greeter2 from "./gallery/greeter/greeter2.webp";
+import greeter3 from "./gallery/greeter/greeter3.webp";
+import atr1 from "./gallery/atr/atr1.webp";
+import atr2 from "./gallery/atr/atr2.webp";
+import atr3 from "./gallery/atr/atr3.webp";
+import misc1 from "./gallery/miscs/misc1.webp";
+import misc2 from "./gallery/miscs/misc2.webp";
+import misc3 from "./gallery/miscs/misc3.webp";
+import misc4 from "./gallery/miscs/misc4.webp";
+import setup1 from "./gallery/setup/setup1.webp";
+import setup2 from "./gallery/setup/setup2.webp";
+import setup3 from "./gallery/setup/setup3.webp";
 
 const matrsGallery = [turret, glove, turret3, glove2, harmonicdrive, turret2];
+const greeterGallery = [
+  greeter1,
+  greeter2,
+  greeter3,
+  greeter_screenshot,
+  greeter_screenshot2,
+];
+const atrGallery = [atr1, atr2, atr3];
+const setupGallery = [setup1, setup2, setup3];
+const miscsGallery = [misc1, misc2, misc3, misc4];
 
 export {
   logoarrow,
@@ -75,4 +98,8 @@ export {
   biceps,
   selfie,
   matrsGallery,
+  greeterGallery,
+  atrGallery,
+  setupGallery,
+  miscsGallery,
 };

@@ -17,12 +17,12 @@ const styles = {
   ProjectCardFeaturesText: "sm:text-[20px] text-[14px]",
 
   sectionHeadText:
-    "text-white font-black md:text-[60px] sm:text-[50px] text-[35px] tracking-tighter",
+    "text-white font-bold md:text-[60px] sm:text-[50px] text-[35px] tracking-tighter",
 
   subText: "sm:text-[18px] text-[14px]",
 
   GallerySectionTitle:
-    "font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px] tracking-tight",
+    "font-medium lg:text-[30px] sm:text-[26px] text-[22px] lg:leading-[40px] tracking-tight",
 };
 
 export { styles };

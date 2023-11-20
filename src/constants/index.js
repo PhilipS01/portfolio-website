@@ -22,6 +22,10 @@ import {
   headset,
   biceps,
   matrsGallery,
+  greeterGallery,
+  atrGallery,
+  setupGallery,
+  miscsGallery,
 } from "../assets";
 import Matrs_Model from "../components/canvas/Turret_new";
 import ATR_Model from "../components/canvas/Atr";
@@ -268,6 +272,22 @@ const gallerySections = [
   {
     title: "MATRS",
     images: matrsGallery,
+  },
+  {
+    title: "Greeter",
+    images: greeterGallery,
+  },
+  {
+    title: "Prüfstand",
+    images: atrGallery,
+  },
+  {
+    title: "Setup & Co.",
+    images: setupGallery,
+  },
+  {
+    title: "Sonstiges",
+    images: miscsGallery,
   },
 ];
 
