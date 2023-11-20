@@ -1,5 +1,5 @@
 build site:
-  image: ubuntu:latest
+  image: node:latest
   stage: build
   script:
     - npm install --progress=false
@@ -10,7 +10,7 @@ build site:
       - dist
 
 unit test:
-  image: ubuntu:latest
+  image: node:latest
   stage: test
   script:
     - npm install --progress=false
