@@ -2,7 +2,7 @@ build site:
   image: node:latest
   stage: build
   script:
-    - npm install --progress=false
+    - npm install --progress=false --legacy-peer-deps
     - npm run build
   artifacts:
     expire_in: 1 week
@@ -13,7 +13,7 @@ unit test:
   image: node:latest
   stage: test
   script:
-    - npm install --progress=false
+    - npm install --progress=false --legacy-peer-deps
     - npm run unit
 
 deploy:
