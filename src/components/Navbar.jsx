@@ -76,9 +76,13 @@ const Navbar = ({ isHome }) => {
                   <span>{link.title}</span>
                 </Link>
               )}
-
-              {link.id != "idGallery" && (
+              {link.id != "idGallery" && isHome && (
                 <a href={`#${link.link}`}>{link.title}</a>
+              )}
+              {link.id != "idGallery" && !isHome && (
+                <Link to={`/#${link.link}`}>
+                  <span>{link.title}</span>
+                </Link>
               )}
             </li>
           ))}
@@ -118,9 +122,13 @@ const Navbar = ({ isHome }) => {
                       <span>{link.title}</span>
                     </Link>
                   )}
-
-                  {link.id != "idGallery" && (
+                  {link.id != "idGallery" && isHome && (
                     <a href={`#${link.link}`}>{link.title}</a>
+                  )}
+                  {link.id != "idGallery" && !isHome && (
+                    <Link to={`/#${link.link}`}>
+                      <span>{link.title}</span>
+                    </Link>
                   )}
                 </li>
               ))}
