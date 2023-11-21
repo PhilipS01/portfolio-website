@@ -88,13 +88,13 @@ const ToolCrest = ({ index, name, icon, isMobile }) => {
             className={`${
               isMobile ? "w-9 h-9 " : "w-12 h-12 "
             } object-contain drag-none select-none`}
+            loading="lazy"
           />
         </div>
       </Tilt>
     </motion.div>
   );
 };
-// bg-[url('../../public/greeter_screenshot.png')] bg-top bg-cover
 const ProjectCard = ({
   index,
   title,
@@ -163,9 +163,11 @@ const ProjectCard = ({
                       </h4>
                       {features[0].tags.map((tag, index) => {
                         return (
-                          <div className="text-right mt-[1em] border-separate border-r pr-4 border-slate-500">
+                          <div
+                            className="text-right mt-[1em] border-separate border-r pr-4 border-slate-500"
+                            key={`feature-${tag.name}-${index}`}
+                          >
                             <div
-                              key={`feature-${tag.name}-${index}`}
                               className={`${styles.ProjectCardFeaturesText} text-slate-200 font-bold tracking-tight`}
                             >
                               {tag.name}
@@ -251,9 +253,11 @@ const ProjectCard = ({
                       </h4>
                       {features[0].tags.map((tag, index) => {
                         return (
-                          <div className="mt-[1em]">
+                          <div
+                            className="mt-[1em]"
+                            key={`feature-${tag.name}-${index}-mobile`}
+                          >
                             <div
-                              key={`feature-${tag.name}-${index}-mobile`}
                               className={`${styles.ProjectCardFeaturesText} text-slate-200 font-bold tracking-tight`}
                             >
                               {tag.name}
@@ -270,7 +274,7 @@ const ProjectCard = ({
                   </td>
                 </tr>
                 <tr>
-                  <div className="flex flex-row justify-center">
+                  <td className="flex flex-row justify-center">
                     {tools.map((tool, index) => (
                       <ToolCrest
                         key={`tool-${title}-${tool.name}-${index}-mobile`}
@@ -279,12 +283,12 @@ const ProjectCard = ({
                         {...tool}
                       />
                     ))}
-                  </div>
+                  </td>
                 </tr>
                 <tr>
                   <td className="pt-[1em]">
                     <a
-                      href={`/projects/${link}`}
+                      href={git_link}
                       className={`${styles.ProjectCardFeaturesText} text-slate-500 hover:text-slate-300 transition-all`}
                     >
                       Erfahre mehr

@@ -19,9 +19,8 @@ import python from "./tech/python.png";
 import threed_printing from "./tech/3d_printing_2.png";
 import electronics from "./tech/electronics.png";
 
-import arrownext from "./arrow_next.svg";
-import greeter_screenshot from "./greeter_screenshot.png";
-import greeter_screenshot2 from "./greeter_screenshot2.png";
+import greeter_screenshot from "./greeter_screenshot.webp";
+import greeter_screenshot2 from "./greeter_screenshot2.webp";
 
 import rsschmalkalden from "./cv/rss.png";
 import bbzsm from "./cv/bbzsm.png";
@@ -50,6 +49,7 @@ import misc1 from "./gallery/miscs/misc1.webp";
 import misc2 from "./gallery/miscs/misc2.webp";
 import misc3 from "./gallery/miscs/misc3.webp";
 import misc4 from "./gallery/miscs/misc4.webp";
+import preports_screenshot from "./gallery/miscs/preports_screenshot.webp";
 import setup1 from "./gallery/setup/setup1.webp";
 import setup2 from "./gallery/setup/setup2.webp";
 import setup3 from "./gallery/setup/setup3.webp";
@@ -64,7 +64,7 @@ const greeterGallery = [
 ];
 const atrGallery = [atr1, atr2, atr3];
 const setupGallery = [setup1, setup2, setup3];
-const miscsGallery = [misc1, misc2, misc3, misc4];
+const miscsGallery = [preports_screenshot, misc1, misc2, misc3, misc4];
 
 export {
   logoarrow,
@@ -80,7 +80,6 @@ export {
   reactjs,
   tailwind,
   threejs,
-  arrownext,
   cpp,
   fusion360,
   python,

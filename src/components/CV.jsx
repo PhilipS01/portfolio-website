@@ -96,7 +96,7 @@ const CV = () => {
           {cv.map((group, index) => {
             if (group.title != "Kenntnisse und Interessen") {
               return (
-                <div>
+                <div key={`cv-${group.title}-${index}`}>
                   <h1 className="text-white/60 sm:text-[20px] text-[14px] text-left mb-5">
                     {group.title}
                   </h1>
@@ -117,7 +117,7 @@ const CV = () => {
             } else {
               // Kenntnisse und Interessen Abschnitt
               return (
-                <div>
+                <div key={`cv-${group.title}-${index}`}>
                   <h1 className="text-white/60 sm:text-[20px] text-[14px] text-left mb-5">
                     {group.title}
                   </h1>
