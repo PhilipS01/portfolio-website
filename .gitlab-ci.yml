@@ -10,12 +10,12 @@ build site:
       - dist
 
 deploy:
-  image: alpine
+  image: alpine:latest
   stage: deploy
+  before_script:
+    - apk update && apk add openssh-client rsync
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY_HOSTINGER" | ssh-add -
+    - echo "Host *ntStrictHostKeyChecking no" >> ~/.ssh/config
   script:
-    - apk add --no-cache openssh
-    - mkdir -p ~/.ssh
-    - echo "$SSH_PRIVATE_KEY_HOSTINGER" >> ~/.ssh/id_rsa
-    - chmod 600 ~/.ssh/id_rsa
-    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
-    - scp -P 65002 -i ~/.ssh/id_rsa dist/ u593128525@195.35.49.150:/home/u593128525/public_html/
+    - rsync -atve 'ssh -p 65002' dist/ u593128525@195.35.49.150:/home/u593128525/public_html/
