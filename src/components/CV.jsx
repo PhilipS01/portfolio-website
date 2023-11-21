@@ -141,7 +141,7 @@ const CV = () => {
       </GlowCapture>
       <div className="text-white text-right width-full mt-5">
         <a
-          href="../../public/Philip_Simon_CV.pdf"
+          href="./Philip_Simon_CV.pdf"
           download={true}
           className="sm:text-[20px] text-[14px] transition-all hover:font-bold text-slate-500 hover:text-slate-300 md:mr-5 mr-3 px-4 py-1 bg-white/5 rounded-xl hover:bg-white/0"
         >
