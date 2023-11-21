@@ -1,88 +1,108 @@
-import React, { useEffect, useState, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import { styles } from "../styles";
-import { MainCanvas } from "./canvas";
 import { Reveal, DoubleSlideReveal } from "./util/Reveal";
-import { ChangeHero } from "./util/ChangeHero";
 import { ChangeHeroSub } from "./util/ChangeHeroSub";
-import { useSelector, useDispatch } from "react-redux";
-import { changeText, changeSubtext } from "../slices/mainHeadingSlice";
-import delay from "./util/delay";
-import ProjectProperties from "./ProjectProperties";
-import { projects } from "../constants";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
-  const dispatch = useDispatch();
-  const matrs = useSelector((state) => state.matrs);
-  const heading = useSelector((state) => state.heading);
-  const defaultHeading = useSelector((state) => state.defaultHeading);
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
 
-  const mainHeadingText = heading.text;
-  const mainHeadingSubText = heading.subtext;
+  const color = useTransform(scrollYProgress, [0.48, 0.6], ["#232B23", "#fff"]); // heading color
+  const opacity = useTransform(scrollYProgress, [0.75, 0.83], [1, 0]); // landing div opacity
 
-  const subHeading = document.getElementById("subHeading");
+  const color2 = useTransform(
+    scrollYProgress,
+    [0.5, 0.55],
+    ["#232B23", "rgba(0,0,0,0.0)"]
+  ); // projects link color
 
-  const [projectIndex, setprojectIndex] = useState(0);
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0.48, 0.52],
+    ["#e9dab1", "#181818"]
+  ); // background color
 
-  async function animateChangeHeading(text, subtext) {
-    await delay(250);
-    dispatch(changeText(text));
-    subHeading.style.opacity = "0";
-    dispatch(changeSubtext(subtext));
-    await delay(300);
-    subHeading.style.opacity = "1";
-  }
-
-  // Update the text of the main heading depending on which project is opened/displayed
-  useEffect(() => {
-    if (matrs.vis) {
-      animateChangeHeading(matrs.text, matrs.subtext);
-    } else {
-      // if no project is visible, display default text
-      if (defaultHeading.vis) {
-        animateChangeHeading(defaultHeading.text, defaultHeading.subtext);
-      }
-    }
-  }, [matrs.vis]);
+  const scroll_alert_opacity = useTransform(
+    scrollYProgress,
+    [0.34, 0.37],
+    [1, 0]
+  ); // landing div opacity
 
   return (
-    <section className="relative w-full h-[screen] mx-auto">
-      <div
-        className="flex flex-col relative top-[200px] text-center"
-        id="headings"
+    <section>
+      <motion.section
+        className="relative w-full h-[200vh] mx-auto bg-retro_primary"
+        style={{
+          backgroundColor,
+        }}
+        ref={targetRef}
+        id="heroMotionSection"
       >
-        <div id="mainHeading">
-          <ChangeHero>
+        <motion.div
+          className="flex flex-col top-[35vh] text-center sticky"
+          id="headings"
+          style={{ opacity }}
+        >
+          <div id="mainHeading">
             <Reveal>
-              <h1
+              <motion.h1
                 className={`${styles.heroHeadText} w-fit mx-auto`}
                 id="mainHeadingH1"
+                style={{
+                  color,
+                }}
               >
-                {mainHeadingText}
-              </h1>
+                Ideen werden Realität
+              </motion.h1>
             </Reveal>
-          </ChangeHero>
-        </div>
-        <p
-          className={`${styles.heroSubText} mt-2  mx-auto w-fit`}
-          id="subHeading"
-        >
-          <ChangeHeroSub>{mainHeadingSubText}</ChangeHeroSub>
-        </p>
+          </div>
+          <p
+            className={`${styles.heroSubText} mt-[1em]  mx-auto w-fit invert-[50%]`}
+            id="subHeading"
+          >
+            <ChangeHeroSub>
+              Mechatronik und Full-Stack-Entwicklung
+            </ChangeHeroSub>
+          </p>
+          <motion.div className="mt-[2em] z-10" style={{ color: color2 }}>
+            <DoubleSlideReveal>
+              <a
+                href="#projects"
+                id="direct_work_link"
+                className="font-medium hover:font-bold hover:text-2xl text-xl transition-all bg-clip-text bg-gradient-to-br from-green-400 to-blue-500"
+              >
+                Direkt zu den Projekten ➜
+              </a>
+            </DoubleSlideReveal>
+          </motion.div>
+        </motion.div>
 
-        <div className="text-accent_tint mt-10 z-10">
-          <DoubleSlideReveal>
-            <a
-              href="#work"
-              id="direct_work_link"
-              className="hover:font-bold transition-all"
+        <motion.div
+          className="absolute bottom-[105vh] w-full flex justify-center items-center"
+          style={{ opacity: scroll_alert_opacity }}
+        >
+          <a href="#projects">
+            <div
+              className="w-[35px] h-[64px] rounded-3xl border-4 border-retro_secondary flex justify-center items-start p-2"
+              id="scroll-btn"
             >
-              Direkt zu den Projekten ⇀
-            </a>
-          </DoubleSlideReveal>
-        </div>
-      </div>
-      <MainCanvas />
-      <ProjectProperties {...projects[projectIndex]} />
+              <motion.div
+                animate={{ y: [0, 24, 0] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="w-3 h-3 rounded-full bg-retro_secondary mb-1"
+              />
+            </div>
+          </a>
+        </motion.div>
+      </motion.section>
     </section>
   );
 };

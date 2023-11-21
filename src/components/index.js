@@ -1,10 +1,9 @@
 import { MainCanvas } from "./canvas";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
-import About from "./About";
-import Tech from "./Tech";
-import Works from "./Works";
+import CV from "./CV";
+import Work from "./Work";
 import Contact from "./Contact";
-import CanvasLoader from "./Loader";
+import GalleryHero from "./GalleryHero";
 
-export { Hero, Navbar, About, Tech, Works, Contact, MainCanvas, CanvasLoader };
+export { Hero, Navbar, CV, Work, Contact, MainCanvas, GalleryHero };

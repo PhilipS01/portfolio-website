@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,9 +9,34 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Fira Mono", monospace;
   scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+/* width */
+#galleryDiv::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+#galleryDiv::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Handle */
+#galleryDiv::-webkit-scrollbar-thumb {
+  background: #c0c0c08b;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+#galleryDiv::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8fc;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .hash-span {
@@ -206,4 +232,34 @@
 .tiltcard {
   background-image: radial-gradient(circle at 83% 88%, 
   white, #a370e1);
+}
+
+#direct_work_link{
+  cursor: pointer;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(25px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+.navHighlight {
+	text-decoration: none;
+	background: linear-gradient(currentColor, currentColor) bottom / 0 .1em no-repeat;
+	transition: 0.5s background-size;
+  background-position: left bottom;
+}
+
+.navHighlight:hover {
+	background-size: 100% .1em;
 }

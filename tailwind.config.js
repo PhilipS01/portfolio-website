@@ -1,21 +1,20 @@
 /** @type {import('tailwindcss').Config} */
+const antiDrag = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
   theme: {
     extend: {
       colors: {
-        primary: "#ffffff",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        quaternary: "#dfd9ff",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "black-300": "#161617",
-        offwhite: "#f3f3f3",
-        offblack: "#1d1d1f",
-        accent: "#6e1ed0",
-        accent_tint: "#9961de",
+        retro_primary: "#e9dab1",
+        retro_secondary: "#181818",
+        retro_accent_green: "#689d69",
+        retro_accent_blue: "#458587",
+        retro_accent_yellow: "#d79922",
+        retro_accent_red: "#cc231c",
+        retro_text_dark: "#232B23",
+        retro_text_inactive: "#c1ae8a",
+        background_dark: "#101010",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
@@ -28,5 +27,20 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    antiDrag(function ({ addUtilities }) {
+      addUtilities({
+        ".drag-none": {
+          "-webkit-user-drag": "none",
+          "-khtml-user-drag": "none",
+          "-moz-user-drag": "none",
+          "-o-user-drag": "none",
+          "user-drag": "none",
+        },
+        ".floating-animation": {
+          animation: "float 13s ease-in-out infinite",
+        },
+      });
+    }),
+  ],
 };

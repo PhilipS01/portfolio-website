@@ -1,23 +1,17 @@
-import { BrowserRouter } from "react-router-dom";
-
-import { About, Contact, Hero, Navbar, Tech, Works } from "./components";
-
-export const sm_windowWidth = 1200;
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./home";
+import Gallery from "./gallery";
+import Footer from "./footer";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary text-black">
-        <div className="bg-offwhite bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Tech />
-        <Works />
-        <div className="relative z-0">
-          <Contact />
-        </div>
+      <div className="relative z-0 bg-retro_secondary text-black">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

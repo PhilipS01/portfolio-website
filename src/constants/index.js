@@ -1,116 +1,50 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
-  typescript,
   html,
   css,
   reactjs,
-  redux,
   tailwind,
-  nodejs,
-  mongodb,
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
+  cpp,
   threejs,
+  fusion360,
+  python,
+  threed_printing,
+  electronics,
+  rsschmalkalden,
+  bbzsm,
+  tuda,
+  lrasm,
+  langs,
+  neuralnet,
+  headset,
+  biceps,
+  matrsGallery,
+  greeterGallery,
+  atrGallery,
+  setupGallery,
+  miscsGallery,
 } from "../assets";
+import Matrs_Model from "../components/canvas/Turret_new";
+import ATR_Model from "../components/canvas/Atr";
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
+    id: "idProjects",
+    link: "projects",
+    title: "Projekte",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "idGallery",
+    link: "gallery",
+    title: "Galerie",
   },
   {
-    id: "contact",
-    title: "Contact",
-  },
-];
-
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
-];
-
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    id: "idCV",
+    link: "cv",
+    title: "CV",
   },
 ];
 
@@ -118,85 +52,243 @@ const projects = [
   {
     title: "MATRS",
     description: "Ferngesteuertes Miniatur-Geschütz",
-    components_length: 2,
-    components: [
+    model: Matrs_Model,
+    link: "matrs",
+    features: [
       {
-        name: "Miniatur-Geschütz",
         tags: [
           {
-            name: "Gieren",
-            prop: "durch 39,5 : 1 Spannungswellengetriebe",
+            name: "Fernsteuerung mittels Handschuh",
+            prop: "Bewegungserkennung durch Sensor-Fusion",
           },
           {
-            name: "Nicken",
-            prop: "durch 3⅓ : 1 Zahnriemengetriebe",
+            name: "Präzises Gieren und Nicken",
+            prop: "Durch Spannungswellen- und Zahnriemengetriebe",
           },
           {
             name: "Drahtlose Kommunikation",
-            prop: "mittles Bluetooth Low Energy",
-          },
-        ],
-      },
-      {
-        name: "Handschuh",
-        tags: [
-          {
-            name: "Bewegungserkennung",
-            prop: "durch Sensor-Fusion eines 6-Achsen-Gyroskops",
+            prop: "Mittles Bluetooth Low Energy",
           },
           {
             name: "Virtueller Abzug",
-            prop: "durch Flex-Sensor",
-          },
-          {
-            name: "Portable",
-            prop: "dank Batteriestrom",
-          },
-          {
-            name: "Drahtlose Kommunikation",
-            prop: "mittles Bluetooth Low Energy",
+            prop: "Durch Flex-Sensor im Finger",
           },
         ],
       },
     ],
-    link: "https://github.com/",
+    tools: [
+      {
+        name: "cpp",
+        icon: cpp,
+      },
+      {
+        name: "fusion360",
+        icon: fusion360,
+      },
+      {
+        name: "electronics",
+        icon: electronics,
+      },
+      {
+        name: "3D printing",
+        icon: threed_printing,
+      },
+    ],
+    git_link:
+      "https://gitlab.com/PhilipS01/motion-actuated-turret-remote-system",
   },
   {
     title: "Getriebe Prüfstand",
-    description:
-      "Ein variabler Prüfstand zur Leistungserfassung von zylindrischen Getrieben",
-    components: [
+    description: "Leistungserfassung zylindrischer Getriebe",
+    model: ATR_Model,
+    link: "pruefstand",
+    features: [
       {
         tags: [
           {
-            name: "Getriebe-Greifer",
-            prop: "angetrieben durch Linearaktoren",
+            name: "Schwebende Befestigung",
+            prop: "Durch Gripper und Lineare Schienen",
+          },
+          {
+            name: "Getriebe Gripper",
+            prop: "Angetrieben von Linearaktoren",
+          },
+          {
+            name: "Kraftmessung",
+            prop: "Über Wägezelle am Endeffektor",
           },
         ],
       },
     ],
-    link: "https://github.com/",
+    tools: [
+      {
+        name: "fusion360",
+        icon: fusion360,
+      },
+      {
+        name: "python",
+        icon: python,
+      },
+    ],
+    git_link: "https://gitlab.com/PhilipS01/adaptable-testing-rig",
   },
   {
     title: "Greeter",
-    description:
-      "Eine Infotafel für Erinnerungen, Wetter, Kameraüberwachung uvm.",
-    components: [
+    description: "Infotafel für Alles",
+    link: "greeter",
+    features: [
       {
         tags: [
           {
-            name: "Externe Informationen",
-            prop: "durch Webscraping und APIs in Python",
+            name: "Kalender Sync",
+            prop: "Dank Python-APIs",
           },
           {
-            name: "Benutzeroberfläche",
-            prop: "als Website durch flask-web-app hinter einem WSGI und einem Nginx reverse-proxy",
+            name: "Stundenplan Sync",
+            prop: "Durch Webscraping von TUCaN",
+          },
+          {
+            name: "Wetterdienst Info",
+            prop: "Ebenfalls durch Webscraping",
+          },
+          {
+            name: "Web Anwendung",
+            prop: "Mit Flask, WSGI und Nginx Reverse Proxy",
           },
         ],
       },
     ],
-    link: "https://github.com/",
+    tools: [
+      {
+        name: "python",
+        icon: python,
+      },
+      {
+        name: "HTML 5",
+        icon: html,
+      },
+      {
+        name: "CSS 3",
+        icon: css,
+      },
+      {
+        name: "JavaScript",
+        icon: javascript,
+      },
+    ],
+    git_link: "https://gitlab.com/PhilipS01/greeter",
   },
 ];
 
-export { services, technologies, projects };
+const cv = [
+  {
+    title: "Akademische Laufbahn",
+    items: [
+      {
+        date: "Seit Oktober 2023",
+        item_title: "TU-Darmstadt",
+        description: [
+          "Studium im B.Sc. Mechatronik\nFachbereich Elektro- und Informationstechnik",
+        ],
+        icon: tuda,
+        iconBg: "#fff",
+      },
+      {
+        date: "Juni 2023",
+        item_title: "Berufsbildungszentrum Schmalkalden",
+        description: [
+          "Allgemeine Hochschulreife mit ∅1,9",
+          "Fachrichtung Technik\nSchwerpunkt Daten- und Informationstechnik",
+        ],
+        icon: bbzsm,
+        iconBg: "#e7e8e2",
+      },
+      {
+        date: "Juni 2019",
+        item_title: "Staatliche Regelschule Schmalkalden",
+        description: ["Mittlere Reife mit ∅1,1"],
+        icon: rsschmalkalden,
+        iconBg: "#e7e8e2",
+      },
+    ],
+    bgColor: "#0ea5e9",
+    bgColor2: "#2563eb",
+  },
+  {
+    title: "Berufserfahrung",
+    items: [
+      {
+        date: "Januar - Juli 2022",
+        item_title: "Landratsamt Schmalkalden Meiningen",
+        description: [
+          "Kommunaler IT-Service\nAufgaben: Interne Knowledgebase Entwicklung,\nIT-Außendienst an Schulen des Landkreises",
+        ],
+        icon: lrasm,
+        iconBg: "#fff",
+      },
+    ],
+    bgColor: "#34d399",
+    bgColor2: "#16a34a",
+  },
+  {
+    title: "Kenntnisse und Interessen",
+    items: [
+      {
+        date: "Technik & IT",
+        description: [
+          "C++, C#, Python, JS, HTML, CSS",
+          "Fusion360, Cura, PlatformIO, Figma, Blender,\nGIMP, Kdenlive",
+          "Linux (Arch, Ubuntu, Debian), Git",
+        ],
+        icon: neuralnet,
+        iconBg: "#fff",
+      },
+      {
+        date: "Hobbies",
+        description: [
+          "3D-Druck, Mikroelektronik",
+          "Gewichtheben, Joggen, Lesen",
+        ],
+        icon: biceps,
+        iconBg: "#fff",
+      },
+      {
+        date: "Fremdsprachen",
+        description: [
+          "Deutsch (Muttersprache)",
+          "Englisch (fließend)",
+          "Französisch (Grundkrenntnisse)",
+        ],
+        icon: langs,
+        iconBg: "#e7e8e2",
+      },
+    ],
+    bgColor: "#E95420",
+    bgColor2: "#772953",
+  },
+];
+
+const gallerySections = [
+  {
+    title: "MATRS",
+    images: matrsGallery,
+  },
+  {
+    title: "Greeter",
+    images: greeterGallery,
+  },
+  {
+    title: "Prüfstand",
+    images: atrGallery,
+  },
+  {
+    title: "Setup & Co.",
+    images: setupGallery,
+  },
+  {
+    title: "Sonstiges",
+    images: miscsGallery,
+  },
+];
+
+export { projects, cv, gallerySections };
