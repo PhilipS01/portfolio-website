@@ -7,7 +7,7 @@ export let atrModelgroup = null;
 
 function ATR_Model(props) {
   atrModelgroup = useRef();
-  const { nodes, materials } = useGLTF("../../../public/atr/atr.glb");
+  const { nodes, materials } = useGLTF("./3d_models/atr.glb");
 
   // animate
   useFrame((state) => {
@@ -155,5 +155,5 @@ function ATR_Model(props) {
   );
 }
 
-useGLTF.preload("../../../public/atr/atr.glb");
+useGLTF.preload("./3d_models/atr.glb");
 export default <ATR_Model />;

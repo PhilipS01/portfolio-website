@@ -7,7 +7,7 @@ export let matrsModelgroup = null;
 
 function Matrs_Model(props) {
   matrsModelgroup = useRef();
-  const { nodes, materials } = useGLTF("../../../public/matrs/turret_new.glb");
+  const { nodes, materials } = useGLTF("./3d_models/turret_new.glb");
 
   // animate
   useFrame((state) => {
@@ -86,5 +86,5 @@ function Matrs_Model(props) {
   );
 }
 
-useGLTF.preload("../../../public/matrs/turret_new.glb");
+useGLTF.preload("./3d_models/turret_new.glb");
 export default <Matrs_Model />;
