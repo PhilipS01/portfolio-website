@@ -107,9 +107,15 @@ const Navbar = ({ isHome }) => {
                     setActive(link.title);
                   }}
                 >
-                  <a href={`${link.id == "idGallery" ? "" : "#"}${link.link}`}>
-                    {link.title}
-                  </a>
+                  {link.id == "idGallery" && (
+                    <Link to={`/${link.id}`}>
+                      <span>{link.title}</span>
+                    </Link>
+                  )}
+
+                  {link.id != "idGallery" && (
+                    <a href={`#${link.link}`}>{link.title}</a>
+                  )}
                 </li>
               ))}
             </ul>
