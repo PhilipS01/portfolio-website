@@ -44,14 +44,7 @@ const Navbar = ({ isHome }) => {
         className="w-full flex justify-between items-center max-w-[1500px] mx-auto"
         id="navbar"
       >
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive("");
-            window.location.href = window.location.href;
-          }}
-        >
+        <Link to="/" className="flex items-center gap-2">
           <span
             className={`${
               colorChange || !isHome ? "text-slate-200" : "text-retro_text_dark"
