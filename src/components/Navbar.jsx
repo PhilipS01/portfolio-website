@@ -12,6 +12,7 @@ const Navbar = ({ isHome }) => {
   function checkBgColor() {
     const heroMotionSection = document.getElementById("heroMotionSection");
     if (
+      heroMotionSection != null &&
       window
         .getComputedStyle(heroMotionSection, null)
         .getPropertyValue("background-color") == "rgb(24, 24, 24)"
