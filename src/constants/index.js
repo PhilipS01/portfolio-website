@@ -272,22 +272,27 @@ const gallerySections = [
   {
     title: "MATRS",
     images: matrsGallery,
+    videos: ["NkmFdA17rqw", "FZuujulnBH4"],
   },
   {
     title: "Greeter",
     images: greeterGallery,
+    videos: [],
   },
   {
     title: "Prüfstand",
     images: atrGallery,
+    videos: [],
   },
   {
     title: "Setup & Co.",
     images: setupGallery,
+    videos: [],
   },
   {
     title: "Sonstiges",
     images: miscsGallery,
+    videos: [],
   },
 ];
 
