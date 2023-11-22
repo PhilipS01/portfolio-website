@@ -4,7 +4,7 @@ import { fadeIn, staggerContainer } from "../utils/motion";
 import { gallerySections } from "../constants";
 import { useState } from "react";
 
-const GallerySection = ({ title, images }) => {
+const GallerySection = ({ title, images, videos }) => {
   const [fullScreenImage, setfullScreenImage] = useState(null);
   const [fullScreenImageToggle, setfullScreenImageToggle] = useState(false);
 
@@ -36,7 +36,22 @@ const GallerySection = ({ title, images }) => {
             </div>
           );
         })}
+        {videos.map((link, index) => {
+          return (
+            <div>
+              <iframe
+                src={`https://www.youtube.com/embed/${link}`}
+                title="Video"
+                key={`galleryvideo-${index}`}
+                allow="autoplay; encrypted-media;"
+                allowFullScreen
+                className="rounded-3xl h-[237px] w-[237px] object-cover mx-auto snap-start shrink-0 cursor-pointer"
+              />
+            </div>
+          );
+        })}
       </div>
+      <div></div>
       <div
         id="fullScreenImageContainer"
         className={`${

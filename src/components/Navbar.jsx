@@ -12,6 +12,7 @@ const Navbar = ({ isHome }) => {
   function checkBgColor() {
     const heroMotionSection = document.getElementById("heroMotionSection");
     if (
+      heroMotionSection != null &&
       window
         .getComputedStyle(heroMotionSection, null)
         .getPropertyValue("background-color") == "rgb(24, 24, 24)"
@@ -43,14 +44,7 @@ const Navbar = ({ isHome }) => {
         className="w-full flex justify-between items-center max-w-[1500px] mx-auto"
         id="navbar"
       >
-        <Link
-          to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive("");
-            window.location.href = window.location.href;
-          }}
-        >
+        <Link to="/" className="flex items-center gap-2">
           <span
             className={`${
               colorChange || !isHome ? "text-slate-200" : "text-retro_text_dark"
@@ -71,9 +65,19 @@ const Navbar = ({ isHome }) => {
               } text-[18px] cursor-pointer navHighlight`}
               onClick={() => setActive(link.title)}
             >
-              <a href={`${link.id == "idGallery" ? "" : "#"}${link.link}`}>
-                {link.title}
-              </a>
+              {link.id == "idGallery" && (
+                <Link to={`/${link.link}`}>
+                  <span>{link.title}</span>
+                </Link>
+              )}
+              {link.id != "idGallery" && isHome && (
+                <a href={`#${link.link}`}>{link.title}</a>
+              )}
+              {link.id != "idGallery" && !isHome && (
+                <Link to={`/#${link.link}`}>
+                  <span>{link.title}</span>
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -107,9 +111,19 @@ const Navbar = ({ isHome }) => {
                     setActive(link.title);
                   }}
                 >
-                  <a href={`${link.id == "idGallery" ? "" : "#"}${link.link}`}>
-                    {link.title}
-                  </a>
+                  {link.id == "idGallery" && (
+                    <Link to={`/${link.link}`}>
+                      <span>{link.title}</span>
+                    </Link>
+                  )}
+                  {link.id != "idGallery" && isHome && (
+                    <a href={`#${link.link}`}>{link.title}</a>
+                  )}
+                  {link.id != "idGallery" && !isHome && (
+                    <Link to={`/#${link.link}`}>
+                      <span>{link.title}</span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
