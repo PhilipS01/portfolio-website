@@ -51,16 +51,15 @@ const GallerySection = ({ title, images, videos }) => {
           );
         })}
       </div>
-      <div></div>
       <div
         id="fullScreenImageContainer"
         className={`${
           fullScreenImageToggle ? "block" : "hidden"
-        } absolute top-0 left-0 bg-black/80 overscroll-auto h-[100%] z-10`}
+        } absolute top-0 left-0 bg-black/90 overscroll-auto h-[100%] z-10 w-[100vw]`}
       >
         <img
           src={fullScreenImage}
-          className="w-[100vw] h-[100vh] object-contain fixed bg-black/80"
+          className="w-[100vw] h-[100vh] object-contain fixed"
           onClick={() => {
             setfullScreenImageToggle(false);
           }}
@@ -82,7 +81,7 @@ const GallerySection = ({ title, images, videos }) => {
 const GalleryHero = () => {
   return (
     <section
-      className={`${styles.paddingX} mx-auto relative z-0 max-w-[1646px] w-full sm:pt-40 pt-24`}
+      className={`${styles.paddingX} mx-auto z-0 max-w-[1646px] w-full sm:pt-40 pt-24`}
     >
       <motion.div
         variants={staggerContainer()}
