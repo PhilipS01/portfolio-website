@@ -53,6 +53,8 @@ import preports_screenshot from "./gallery/miscs/preports_screenshot.webp";
 import setup1 from "./gallery/setup/setup1.webp";
 import setup2 from "./gallery/setup/setup2.webp";
 import setup3 from "./gallery/setup/setup3.webp";
+import crkbd1 from "./gallery/setup/crkbd1.webp";
+import crkbd2 from "./gallery/setup/crkbd2.webp";
 
 const matrsGallery = [turret, glove, turret3, glove2, harmonicdrive, turret2];
 const greeterGallery = [
@@ -63,7 +65,7 @@ const greeterGallery = [
   greeter_screenshot2,
 ];
 const atrGallery = [atr1, atr2, atr3];
-const setupGallery = [setup1, setup2, setup3];
+const setupGallery = [setup1, setup2, setup3, crkbd1, crkbd2];
 const miscsGallery = [preports_screenshot, misc1, misc2, misc3, misc4];
 
 export {
