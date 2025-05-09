@@ -32,25 +32,6 @@ const GithubExpander = ({ git_link }) => {
   return (
     <div>
       <motion.div animate={mainControls} initial="hidden" className="flex">
-        <motion.span
-          variants={{
-            hidden: {
-              opacity: 0,
-              x: 15,
-              transition: { delay: 0.5 },
-            },
-            visible: {
-              opacity: 1,
-              x: 0,
-            },
-          }}
-          initial="hidden"
-          animate={mainControls}
-          className="right-[80px] text-white px-4 pt-[0.5em] mr-4 border-solid border-2 border-white/50 rounded-xl hover:border-white/0 transition-colors cursor-pointer hover:bg-white hover:text-background_dark"
-          ref={ref2}
-        >
-          Zum Artikel 🗎
-        </motion.span>
         <a ref={ref} href={git_link} target="_blank">
           <img
             src={github}
@@ -347,7 +328,7 @@ const Work = () => {
             </Glow>
 
             <p className="text-white/60 sm:text-[20px] text-[14px]">
-              Eine Kollektion meines ganzen Stolzes.
+              Mein Heilserum gegen Langeweile.
             </p>
           </motion.div>
         </div>

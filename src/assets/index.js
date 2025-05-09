@@ -26,6 +26,7 @@ import rsschmalkalden from "./cv/rss.png";
 import bbzsm from "./cv/bbzsm.png";
 import tuda from "./cv/tuda.png";
 import lrasm from "./cv/lra-sm.jpg";
+import folivora from "./cv/folivora.png"
 import langs from "./cv/languages.png";
 import neuralnet from "./cv/neuralnet.png";
 import headset from "./cv/headset.png";
@@ -56,6 +57,20 @@ import setup3 from "./gallery/setup/setup3.webp";
 import crkbd1 from "./gallery/setup/crkbd1.webp";
 import crkbd2 from "./gallery/setup/crkbd2.webp";
 
+import lift1 from "./gallery/lift/lift1.webp";
+import lift2 from "./gallery/lift/lift2.webp";
+import lift3 from "./gallery/lift/lift3.webp";
+import lift4 from "./gallery/lift/lift4.webp";
+import lift5 from "./gallery/lift/lift5.webp";
+import lift6 from "./gallery/lift/lift6.webp";
+import lift7 from "./gallery/lift/lift7.webp";
+import lift8 from "./gallery/lift/lift8.webp";
+import lift9 from "./gallery/lift/lift9.webp";
+import lift10 from "./gallery/lift/lift10.webp";
+import lift11 from "./gallery/lift/lift11.webp";
+import lift12 from "./gallery/lift/lift12.webp";
+import lift13 from "./gallery/lift/lift13.webp";
+
 const matrsGallery = [turret, glove, turret3, glove2, harmonicdrive, turret2];
 const greeterGallery = [
   greeter1,
@@ -67,6 +82,7 @@ const greeterGallery = [
 const atrGallery = [atr1, atr2, atr3];
 const setupGallery = [setup1, setup2, setup3, crkbd1, crkbd2];
 const miscsGallery = [preports_screenshot, misc1, misc2, misc3, misc4];
+const liftGallery = [lift1, lift2, lift3, lift4, lift5, lift6, lift7, lift8, lift9, lift10, lift11, lift12, lift13];
 
 export {
   logoarrow,
@@ -93,6 +109,7 @@ export {
   bbzsm,
   tuda,
   lrasm,
+  folivora,
   langs,
   neuralnet,
   headset,
@@ -103,4 +120,5 @@ export {
   atrGallery,
   setupGallery,
   miscsGallery,
+  liftGallery,
 };

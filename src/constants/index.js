@@ -17,6 +17,7 @@ import {
   bbzsm,
   tuda,
   lrasm,
+  folivora,
   langs,
   neuralnet,
   headset,
@@ -26,9 +27,11 @@ import {
   atrGallery,
   setupGallery,
   miscsGallery,
+  liftGallery,
 } from "../assets";
 import Matrs_Model from "../components/canvas/Turret_new";
 import ATR_Model from "../components/canvas/Atr";
+import HiddenLift_Model from "../components/canvas/Hidden_lift";
 
 export const navLinks = [
   {
@@ -49,6 +52,54 @@ export const navLinks = [
 ];
 
 const projects = [
+  {
+    title: "Hidden Lift",
+    description: "Aufzug im Schreibtisch",
+    model: HiddenLift_Model,
+    link: "lift",
+    features: [
+      {
+        tags: [
+          {
+            name: "Zuverlässige Präzision",
+            prop: "Durch Grenzschalter und Homing",
+          },
+          {
+            name: "Kraftvoller Antrieb",
+            prop: "Dank Closed Loop NEMA 24",
+          },
+          {
+            name: "Stabilität",
+            prop: "Mittels HGR20 Linearführung",
+          },
+          {
+            name: "Großes Haltemoment",
+            prop: "Durch SFU1605 Leitspindel",
+          },
+        ],
+      },
+    ],
+    tools: [
+      {
+        name: "cpp",
+        icon: cpp,
+      },
+      {
+        name: "fusion360",
+        icon: fusion360,
+      },
+      {
+        name: "electronics",
+        icon: electronics,
+      },
+      {
+        name: "3D printing",
+        icon: threed_printing,
+      },
+    ],
+    git_link:
+      "https://gitlab.com/PhilipS01/hidden-lift",
+  },
   {
     title: "MATRS",
     description: "Ferngesteuertes Miniatur-Geschütz",
@@ -188,7 +239,7 @@ const cv = [
         date: "Seit Oktober 2023",
         item_title: "TU-Darmstadt",
         description: [
-          "Studium im B.Sc. Mechatronik\nFachbereich Elektro- und Informationstechnik",
+          "Studium im B.Sc. Elektro- und Informationstechnik",
         ],
         icon: tuda,
         iconBg: "#fff",
@@ -218,8 +269,18 @@ const cv = [
     title: "Berufserfahrung",
     items: [
       {
+        date: "Seit Januar 2024",
+        item_title: "Front End Entwickler bei Folivora Energy",
+        description: [
+          "Lead Devolper des Front-Ends der Kunden",
+          "Anvil (Python) als Full-Stack + HTML CSS JS"
+        ],
+        icon: folivora,
+        iconBg: "#fff",
+      },
+      {
         date: "Januar - Juli 2022",
-        item_title: "Landratsamt Schmalkalden Meiningen",
+        item_title: "Praktikant im Landratsamt Schmalkalden-Meiningen",
         description: [
           "Kommunaler IT-Service\nAufgaben: Interne Knowledgebase Entwicklung,\nIT-Außendienst an Schulen des Landkreises",
         ],
@@ -269,6 +330,11 @@ const cv = [
 ];
 
 const gallerySections = [
+  {
+    title: "Hidden Lift",
+    images: liftGallery,
+    videos: ["YLXHSn154IA"],
+  },
   {
     title: "MATRS",
     images: matrsGallery,
