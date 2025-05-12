@@ -94,7 +94,7 @@ const GalleryHero = () => {
           variants={fadeIn("right", "linear", 0, 0.5)}
           className={`${styles.heroHeadText}`}
         >
-          <span className="text-white drop-shadow-md">Gallerie</span>
+          <span className="text-white drop-shadow-md">Galerie</span>
         </motion.h1>
         {gallerySections.map((section, index) => (
           <GallerySection
