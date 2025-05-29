@@ -98,7 +98,7 @@ const projects = [
       },
     ],
     git_link:
-      "https://gitlab.com/PhilipS01/hidden-lift",
+      "https://github.com/PhilipS01/hidden-lift",
   },
   {
     title: "MATRS",
@@ -146,7 +146,7 @@ const projects = [
       },
     ],
     git_link:
-      "https://gitlab.com/PhilipS01/motion-actuated-turret-remote-system",
+      "https://github.com/PhilipS01/matrs",
   },
   {
     title: "Getriebe Prüfstand",
@@ -181,7 +181,7 @@ const projects = [
         icon: python,
       },
     ],
-    git_link: "https://gitlab.com/PhilipS01/adaptable-testing-rig",
+    git_link: "https://github.com/PhilipS01/testing-rig",
   },
   {
     title: "Greeter",
@@ -227,7 +227,7 @@ const projects = [
         icon: javascript,
       },
     ],
-    git_link: "https://gitlab.com/PhilipS01/greeter",
+    git_link: "https://github.com/PhilipS01/greeter",
   },
 ];
 
